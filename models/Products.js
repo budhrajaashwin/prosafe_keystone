@@ -9,7 +9,8 @@ var Products = new keystone.List('Products',{
 Products.add({
   title: { type:String , required: true, default: ''},
   image: { type: Types.CloudinaryImage },
-  details: { type:String}
+  details: { type:String},
+	categories: { type: Types.Relationship, ref: 'ProductsCategory', many: true }
 });
 
 Products.register();

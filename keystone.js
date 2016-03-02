@@ -101,7 +101,7 @@ keystone.set('nav', {
 	'galleries': 'galleries',
 	'enquiries': 'enquiries',
 	'users': 'users',
-	'products' : 'products'
+	'products' : ['products', 'ProductsCategory'],
 });
 
 
