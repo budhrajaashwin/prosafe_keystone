@@ -25,10 +25,10 @@ exports.initLocals = function(req, res, next) {
 
 	locals.navLinks = [
 		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Gallery',		key: 'gallery',		href: '/gallery' },
+		{ label: 'About',		key: 'about',		href: '/about' },
+		{ label: 'Products', key: 'products', href:'/products'},
+		{ label: 'Guidelines',		key: 'guidelines',		href: '/guidelines' },
 		{ label: 'Contact',		key: 'contact',		href: '/contact' },
-		{ label: 'Products', key: 'products', href:'/products'}
 	];
 
 	locals.user = req.user;

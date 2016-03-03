@@ -42,6 +42,7 @@ exports = module.exports = function(app) {
 	app.all('/contact', routes.views.contact);
 	app.get('/products', routes.views.products);
 
+
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 

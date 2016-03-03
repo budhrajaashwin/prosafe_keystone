@@ -12,6 +12,6 @@ exports = module.exports = function(req, res) {
 	view.query('products', keystone.list('Products').model.find().sort('sortOrder'));
 
 	// Render the view
-	view.render('product');
+	view.render('products');
 
 };
