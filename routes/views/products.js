@@ -7,12 +7,31 @@ exports = module.exports = function(req, res) {
 
 	// Set locals
 	locals.section = 'products';
+	locals.filters = {
+		id: req.params.id
+	};
+
+	locals.data = {};
 
 	// Load the galleries by sortOrder
-	view.query('products', keystone.list('Products').model.find().populate('categories').sort('sortOrder'));
-	view.query('categories', keystone.list('ProductsCategory').model.find().sort('sortOrder'));
+	// Load the current category filter
+	view.on('init', function(next) {
+
+		if (req.params.id) {
+			console.log('result', req.params.id);
+			keystone.list('Products').model.findById(locals.filters.id).exec(function(err, result) {
+				console.log(result);
+				locals.data.product = result;
+				next();
+			});
+		} else {
+			console.log('result not there');
+			next();
+		}
+
+	});
 
 	// Render the view
-	view.render('products');
+	view.render('main/productDetails');
 
 };
