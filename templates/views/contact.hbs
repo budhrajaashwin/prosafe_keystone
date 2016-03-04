@@ -1,44 +1,197 @@
-<div class="container">
-	<h1>Contact Us</h1>
+<!-- <div class="container">
+<h1>Contact Us</h1>
 </div>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-6">
-			{{#if enquirySubmitted}}
-			<h3>Thanks for getting in touch.</h3>
-			{{else}}
-			<form method="post">
-				<input type="hidden" name="action" value="contact">
-				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
-				</div>
-				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
-				</div>
-				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-				<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
-					<label>What are you contacting us about?</label>
-					<select name="enquiryType" class="form-control">
-						<option value="">(select one)</option>
-						{{#each enquiryTypes}}
-						<option value="{{value}}">{{label}}</option>
-						{{/each}}
-					</select>
-				</div>
-				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-					<label>Message</label>
-					<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
-				</div>
-				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Send</button>
-				</div>
-			</form>
-			{{/if}}
-		</div>
+<div class="row">
+<div class="col-sm-8 col-md-6" style="padding-top:5%">
+{{#if enquirySubmitted}}
+<h3>Thanks for getting in touch.</h3>
+{{else}}
+<form method="post">
+<input type="hidden" name="action" value="contact">
+<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
+<label>Name</label>
+<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
+</div>
+<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
+<label>Email</label>
+<input type="email" name="email" class="form-control" value="{{formData.email}}">
+</div>
+<div class="form-group">
+<label>Phone</label>
+<input type="text" name="phone" placeholder=" " class="form-control" value="{{formData.phone}}">
+</div>
+<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
+<label>What are you contacting us about?</label>
+<select name="enquiryType" class="form-control">
+<option value="">(select one)</option>
+{{#each enquiryTypes}}
+<option value="{{value}}">{{label}}</option>
+{{/each}}
+</select>
+</div>
+<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+<label>Message</label>
+<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+</div>
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">Send</button>
+</div>
+</form>
+{{/if}}
+</div>
+</div>
+</div> -->
+
+<!-- Header Background Parallax Image -->
+<div id="about_bg">
+	<div class="head-title">
+		<h2>Contact</h2>
 	</div>
 </div>
+<!-- End Header Background Parallax Image -->
+
+<!-- Contact Form (name, email, phone and message inputs for your email form "should change your email adress in contact.php file") -->
+<div class="bg-color padding-top-x2">
+	<div class="container padding-bottom">
+		<div class="col-lg-12" id="contact">
+			<div id="message"></div>
+			<fieldset>
+				<div class="col-md-6">
+
+					<!-- Description -->
+					<h3>We'd love to hear from you</h3>
+					<br>
+					<p>Feel free to contact us for any kind of assistance and we assure you to reply within 48 hours.</p>
+					<br>
+					<div class="row">
+						<!-- Adress -->
+						<div class="col-sm-3 col-md-6">
+							<div class="col-sm-2 contact-icon">
+								<i class="fa fa-map-marker"></i>
+							</div>
+							<div class="col-sm-10">
+								<span><b>Address</b></span>
+								<address>
+									<small>
+										H-83, Harkesh Nagar <br>
+										Okhla Phase-II<br>
+										New Delhi -110020
+										India
+									</small>
+								</address>
+							</div>
+						</div>
+
+						<!-- Phone -->
+						<div class="col-sm-3 col-md-6">
+							<div class="col-sm-2 contact-icon">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div class="col-sm-10">
+								<span><b>Phone</b></span>
+								<address>
+									<small>
+										<a href="tel:+919810328939"> +91-9810328939 </a>
+									</small>
+								</address>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<!-- Fax -->
+						<div class="col-sm-3 col-md-6">
+							<div class="col-sm-2 contact-icon">
+								<i class="fa fa-fax"></i>
+							</div>
+							<div class="col-sm-10">
+								<span><b>Fax</b></span>
+								<address>
+									<small>
+										---------------
+									</small>
+								</address>
+							</div>
+						</div>
+
+						<!-- Email -->
+						<div class="col-sm-3 col-md-6">
+							<div class="col-sm-2 contact-icon">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<div class="col-sm-10">
+								<span><b>Email</b></span>
+								<address>
+									<small>
+										<a href="mailto:prosafe.living@gmail.com"> prosafe.living@gmail.com </a>
+									</small>
+								</address>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-3 col-md-12">
+							<ul class="contact-social">
+								<li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a></li>
+								<li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
+								<li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-skype fa-stack-1x fa-inverse"></i></span></a></li>
+								<li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-pinterest fa-stack-1x fa-inverse"></i></span></a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-8 col-md-6" style="padding-top:5%">
+							{{#if enquirySubmitted}}
+							<h3>Thanks for getting in touch.</h3>
+							{{else}}
+							<form method="post">
+								<input type="hidden" name="action" value="contact">
+								<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
+									<label>Name</label>
+									<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
+								</div>
+								<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
+									<label>Email</label>
+									<input type="email" name="email" class="form-control" value="{{formData.email}}">
+								</div>
+								<div class="form-group">
+									<label>Phone</label>
+									<input type="text" name="phone" placeholder=" " class="form-control" value="{{formData.phone}}">
+								</div>
+								<!-- <div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
+								<label>What are you contacting us about?</label>
+								<select name="enquiryType" class="form-control">
+								<option value="">(select one)</option>
+								{{#each enquiryTypes}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div> -->
+						<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+							<label>Message</label>
+							<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">Send</button>
+						</div>
+					</form>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+
+	</fieldset>
+</div>
+</div>
+</div>
+<!-- End Contact Form -->
+
+<!-- Google Map (adress on map can be changed in app.js file) -->
+<div id="map-canvas"></div>
+<!-- End Google Map -->

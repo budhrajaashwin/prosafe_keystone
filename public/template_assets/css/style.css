@@ -36,6 +36,9 @@ Table of Contents:
 	1) BOOTSTRAP OVERRIDE
 ------------------------------------------------------- */
 .btn{
+	margin-bottom: 8%;
+  background-color: #00943F;
+  border-color: #00943F;
 	border-radius: 0px;
 	text-decoration: none;
 	padding: 12px 18px;
