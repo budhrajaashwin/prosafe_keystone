@@ -54,6 +54,7 @@
                       <div data-filter=".{{title}}" class="cbp-filter-item">
                           {{title}} <div class="cbp-filter-counter"></div>
                       </div>
+                      
                     {{/each}}
 
                     <!-- <div data-filter=".apartments" class="cbp-filter-item">
@@ -73,8 +74,9 @@
                         <!-- Portfolio Item (image and description) -->
                         {{#each products}}
 
+
                           <li class="cbp-item {{categories.0.title}} cbp-l-grid-masonry-height2">
-                              <a class="cbp-caption cbp-lightbox" data-title="{{title}}" href="/products/{{id}}">
+                              <a class="cbp-caption" data-title="{{title}}" href="/products/{{id}}">
                                   <div class="cbp-caption-defaultWrap">
                                       <img src="{{cloudinaryUrl image}}" alt="">
                                   </div>
