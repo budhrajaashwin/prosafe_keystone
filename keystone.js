@@ -105,7 +105,10 @@ keystone.set('nav', {
 	'News': 'News'
 });
 
-keystone.set('cloudinary config', 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx' );
+// keystone.set('cloudinary config', 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx' );
+keystone.init({
+	cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
+});
 
 
 // Start Keystone to connect to your database and initialise the web server
