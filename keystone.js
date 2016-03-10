@@ -107,7 +107,7 @@ keystone.set('nav', {
 
 // keystone.set('cloudinary config', 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx' );
 keystone.init({
-	cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
+	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
 });
 
 
