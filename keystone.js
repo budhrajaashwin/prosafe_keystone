@@ -34,7 +34,8 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'User'
+	'user model': 'User',
+	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
 
 });
 
@@ -106,9 +107,9 @@ keystone.set('nav', {
 });
 
 // keystone.set('cloudinary config', 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx' );
-keystone.init({
-	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
-});
+// keystone.init({
+// 	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
+// });
 
 
 // Start Keystone to connect to your database and initialise the web server
