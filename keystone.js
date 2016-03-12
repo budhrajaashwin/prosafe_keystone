@@ -34,6 +34,7 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
+	'cookie secret': 'bbaisbfakbfiqibqnlqqwoerndslknv ',
 	'user model': 'User',
 	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
 
