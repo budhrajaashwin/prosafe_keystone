@@ -1,23 +1,43 @@
 <!-- Header Background Parallax Image -->
 <!-- <div id="projects_bg">
-  <div class="head-title">
-    <h2>Prodct Details</h2>
-  </div>
+<div class="head-title">
+<h2>Prodct Details</h2>
+</div>
 </div> -->
 <!-- End Header Background Parallax Image -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 <!-- Product details -->
 <div class="container padding-bottom padding-top-x2">
   <div class="row">
+    <div style="
+    display: -webkit-box-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    float: left;
+    margin-left: -14%;"
+    >
 
-
-    <img src="{{data.product.image.url}}" style="margin-top: 30px;width:30%;">
-      <div class="general-title" style="float: right;width: 60%;margin-top: 35px;">
-      <h2> {{data.product.title}} </h2>
-      <br>
-      <br>
-      <h4> {{data.product.details}} </h4>
+    {{#each data.product.image}}
+    <span >
+      <img class="productImage" src="{{url}}" style="margin:35px; width:70px; height:55px; margin-bottom:2px; border: 1px solid #009440; cursor:pointer ">
+    </span>
+    {{/each}}
   </div>
+
+  <div>
+    <img id="primaryImage" src="{{data.product.image.0.url}}" style="width: 450px; height: 400px; display: -webkit-box-flex; display: flex; float: left; margin-left: -50px;" >
+  </div>
+
+
+  <div class="general-title" style="float: right;width: 60%;margin-top: 35px;">
+    <h2> {{data.product.title}} </h2>
+    <br>
+    <br>
+    <h4> {{data.product.details}} </h4>
+  </div>
+  <script src="../js/displayProduct.js"></script>
 
 </div><!-- /row -->
 </div><!-- /container -->

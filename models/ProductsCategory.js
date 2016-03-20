@@ -6,7 +6,8 @@ var ProductsCategory = new keystone.List('ProductsCategory',{
 });
 
 ProductsCategory.add({
-	title: { type: String, required: true , default: '' }
+	title: { type: String, required: true , default: '' },
+  featured: {type: Boolean, default:false, initial: true}
 });
 
 ProductsCategory.relationship({ ref: 'Products', path: 'categories'});
