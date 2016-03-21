@@ -36,8 +36,9 @@ keystone.init({
 	'auth': true,
 	'cookie secret': 'bbaisbfakbfiqibqnlqqwoerndslknv ',
 	'user model': 'User',
-	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx'
-
+	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx',
+	'mandrill api key': 'k71Up33LlL0rXUvoKb2Teg',
+	'mandrill username':'abhimediratta@gmail.com'
 });
 
 // Load your project's Models
@@ -54,6 +55,20 @@ keystone.set('locals', {
 	utils: keystone.utils,
 	editable: keystone.content.editable
 });
+
+//2. sending an email
+//Note: the setup assumes that you have a template file called
+//'enquiry-notification.{TEMPLATE_EXTENSION, e.g. .hbs, .jade}'
+//in '/templates/emails'
+// new keystone.Email('enquiry-notification').send({
+//     subject: '',
+//     to: 'ashwin25694@gmail.com',
+//     fromName: 'Prosafe Living',
+//     fromEmail: 'budhrajaashwin@gmail.com',
+//     // other locals for the email template also go here
+// }, function callback(response){
+// 	console.log("Email response", response);
+// });
 
 // Load your project's Routes
 

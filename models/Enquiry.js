@@ -36,29 +36,47 @@ Enquiry.schema.post('save', function() {
 });
 
 Enquiry.schema.methods.sendNotificationEmail = function(callback) {
-	
+
 	if ('function' !== typeof callback) {
 		callback = function() {};
 	}
-	
+
 	var enquiry = this;
-	
+
 	keystone.list('User').model.find().where('isAdmin', true).exec(function(err, admins) {
-		
+
 		if (err) return callback(err);
-		
-		new keystone.Email('enquiry-notification').send({
-			to: admins,
-			from: {
-				name: 'prosafe',
-				email: 'contact@prosafe.com'
-			},
-			subject: 'New Enquiry for prosafe',
-			enquiry: enquiry
-		}, callback);
-		
-	});
-	
+
+// 		new keystone.Email('enquiry-notification').send({
+// 			to: admins,
+// 			from: {
+// 				name: 'prosafe',
+// 				email: 'contact@prosafe.com'
+// 			},
+// 			subject: 'New Enquiry for prosafe',
+// 			enquiry: enquiry
+// 		}, callback);
+//
+// 	});
+//
+// };
+
+new keystone.Email({
+    templateName: 'enquiry-notification'
+  }).send({
+		to: admins,
+		from: {
+			name: 'prosafe',
+			email: 'contact@prosafe.com'
+		},
+		subject: 'New Enquiry for prosafe',
+		enquiry: enquiry
+	}, function callback(response){
+	 	console.log("Email response", response);
+	 });
+
+});
+
 };
 
 Enquiry.defaultSort = '-createdAt';
