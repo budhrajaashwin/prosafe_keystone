@@ -43,7 +43,14 @@ exports = module.exports = function(app) {
 	app.get('/products', routes.views.categories);
 	app.get('/about',routes.views.about);
 	app.get('/products/:id', routes.views.products);
+	app.get('/users', routes.views.users);
 
+	//Login route
+	app.post('/register', routes.views.users);
+	app.post('/login', routes.views.users);
+	app.post('/signin', routes.views.users);
+	app.get('/signout', routes.views.users);
+	// app.all('/api*', checkAuth);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

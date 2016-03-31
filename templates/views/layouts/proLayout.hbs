@@ -21,7 +21,7 @@
 
   <!-- Css Global Compulsory -->
   <link rel="stylesheet" href="/template_assets/plugins/bootstrap/css/bootstrap.min.css">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- Css Implementing Plugins -->
   <!-- <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">                           -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -52,7 +52,7 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-default navbar-fixed-top header-nav" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -78,29 +78,132 @@
           </li>
           {{/each}}
 
-          <!-- <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <i class="fa fa-angle-down fa-lg"></i></a>
-          <ul class="dropdown-menu" role="menu">
-          <li><a href="onepage_dark.html">One Page Dark</a></li>
-          <li><a href="onepage_slider.html">One Page Slider</a></li>
-          <li><a href="onepage_video.html">One Page Video</a></li>
-          <li><a href="onepage_nav_bottom.html">One Page Bottom Nav</a></li>
-          <li><a href="onepage-canvas.html">One Page Off-Canvas</a></li>
-          <li><a href="index-m.html">Multi-Page</a></li>
-          <li class="divider"></li>
-          <li><a href="shortcodes.html">Shortcodes</a></li>
-          <li><a href="404_page.html">404 Error</a></li>
-          <li><a href="coming_soon.html">Coming Soon</a></li>
-        </ul>
-      </li>     -->
-      <!-- <li><a href="contact.html">Contact</a></li> -->
-    </ul>
-    <div style="margin-right: -1%">
-      <i style="margin-top:27px" class="fa fa-whatsapp "></i>  <b> <a href="tel:+919810328939"> +91-9810328939 </a></b>
-      <i style=" margin-left:25px" class="fa fa-envelope "></i>  <b> <a href="mailto:prosafe.living@gmail.com"> prosafe.living@gmail.com </a> </b>
+          {{#unless user}}
+          <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
+            Sign in
+          </button></a>
+          {{/unless}}
+          <!-- {{#if user }}
+          <div class="showUser "> {{user.name.first}}  </div>
+          {{else}}
+          <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
+          Sign in
+        </button></a>
+        {{/if}} -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content text-center">
+              <div class="modal-header">
+                <button type="button" class="close close-black" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              </div>
+              <div class="modal-body">
+                <!-- Login Form (name, email, phone and message inputs for your email form "should change your email adress in contact.php file") -->
+                <div id="contact">
+                  <div id="message"></div>
+                  <form method="post" action="/login" name="loginForm" id="loginForm">
+                    <fieldset>
+                      <div class="col-md-12">
+                        <!-- Name -->
+                        <!-- <input name="name" type="text" id="name" size="30" value="" placeholder="Name"/>
+                        <br /> -->
+                        <!-- Email -->
+                        <input name="email" type="text" id="email" size="30" value="" placeholder="Email"/>
+                        <br />
+                        <!-- Password -->
+                        <input name="password" type="password" id="password" size="30" value="" placeholder="Password"/>
+                        <input name="action" type="hidden" value="login"/>
+
+                        <!-- Message -->
+                        <!-- <textarea name="comments" cols="40" rows="5" id="comments" placeholder="Message"></textarea> -->
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Sign in</button>
+
+                      </div>
+                      <div style="float:right">
+                        Not a member yet ? <button type="button" id="registerHere" class="formButton"> Register Here </button>
+                      </div>
+                    </fieldset>
+                  </form>
+                  <form method="post" action="/register" id="registrationForm" class="hide">
+                    <fieldset>
+                      <div class="col-md-12">
+                        <!-- Name -->
+                        <input name="name" type="text" id="name" size="30" value="" placeholder="Name"/>
+                        <br />
+                        <!-- Email -->
+                        <input name="email" type="email" id="email" size="30" value="" placeholder="Email"/>
+                        <br />
+
+                        <input name="phone" type="numbers" id="phone" size="30" value="" placeHolder="Phone"/>
+                        <br />
+                        <!-- Password -->
+                        <input name="password" type="password" id="password" size="30" value="" placeholder="Password"/>
+
+                        <input name="action" type="hidden" value="register"/>
+
+                        <!-- Message -->
+                        <input name="securityKey" type="text" id="comments" placeholder="Enter your security key"></textarea>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Register</button>
+
+                      </div>
+                      <div style="float:right">
+                        Already a member? <button type="button" id="signin" class="formButton"> Sign in </button>
+                      </div>
+                    </fieldset>
+                  </form>
+
+                </div>
+                <!-- End Contact Form -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="../js/registrationForm.js"> </script>
+
+        <!-- <li><a href="blog.html">Blog</a></li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <i class="fa fa-angle-down fa-lg"></i></a>
+        <ul class="dropdown-menu" role="menu">
+        <li><a href="onepage_dark.html">One Page Dark</a></li>
+        <li><a href="onepage_slider.html">One Page Slider</a></li>
+        <li><a href="onepage_video.html">One Page Video</a></li>
+        <li><a href="onepage_nav_bottom.html">One Page Bottom Nav</a></li>
+        <li><a href="onepage-canvas.html">One Page Off-Canvas</a></li>
+        <li><a href="index-m.html">Multi-Page</a></li>
+        <li class="divider"></li>
+        <li><a href="shortcodes.html">Shortcodes</a></li>
+        <li><a href="404_page.html">404 Error</a></li>
+        <li><a href="coming_soon.html">Coming Soon</a></li>
+      </ul>
+    </li>     -->
+    <!-- <li><a href="contact.html">Contact</a></li> -->
+  </ul>
+  <div style="inline-block">
+    <div class="userName">  <i style="margin-top:27px" class="fa fa-whatsapp "></i>  <b> <a href="tel:+919810328939"> +91-9810328939 </a></b> </div>
+    <div class="userName">  <i style=" margin-left:25px" class="fa fa-envelope "></i>  <b> <a href="mailto:prosafe.living@gmail.com"> prosafe.living@gmail.com </a> </b> </div>
+    <div class="userName dropdown dropdown-toggle">
+      {{#if user}}
+      <user class="dropdown-toggle userPointer" data-toggle="dropdown" style=" margin-left:25px"> <b> {{user.name.first}} {{user.name.last}}</b> <span class="caret"></span></user>
+      {{/if}}
+      <ul class="dropdown-menu">
+        <li><a href="/signout?action=signout">Logout</a></li>
+      </ul>
+
     </div>
-  </div><!-- /.navbar-collapse -->
+  </div>
+
+
+
+  <!-- <span>
+  <button class="buttonn gold-btn">
+  Login
+</button>
+</span> -->
+</div><!-- /.navbar-collapse -->
 
 </div><!-- /.container-fluid -->
 </nav>
@@ -177,19 +280,19 @@
     <div class="row">
       <!-- Copyright -->
       <!-- <div class="col-sm-6 col-md-6 f-copyright">
-        <span>© Copyright - All Rights Reserved</span>
-      </div>
-      <div class="col-sm-6 col-md-6"> -->
-        <!-- Social Icons -->
-        <ul class="footer-social">
-          <li><a href="tel:+919810328939"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-phone fa-stack-1x fa-inverse"></i></span></a></li>
-          <!-- <li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
-          <li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-skype fa-stack-1x fa-inverse"></i></span></a></li>
-          <li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-pinterest fa-stack-1x fa-inverse"></i></span></a></li> -->
-        </ul>
-      </div>
-    </div><!-- /row -->
-  </div><!-- /container -->
+      <span>© Copyright - All Rights Reserved</span>
+    </div>
+    <div class="col-sm-6 col-md-6"> -->
+    <!-- Social Icons -->
+    <ul class="footer-social">
+      <li><a href="tel:+919810328939"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-phone fa-stack-1x fa-inverse"></i></span></a></li>
+      <!-- <li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
+      <li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-skype fa-stack-1x fa-inverse"></i></span></a></li>
+      <li><a href="#"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-pinterest fa-stack-1x fa-inverse"></i></span></a></li> -->
+    </ul>
+  </div>
+</div><!-- /row -->
+</div><!-- /container -->
 </div>
 <!-- End Footer -->
 

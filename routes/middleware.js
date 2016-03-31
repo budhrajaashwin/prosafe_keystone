@@ -32,6 +32,7 @@ exports.initLocals = function(req, res, next) {
 	];
 
 	locals.user = req.user;
+	console.log(locals.user);
 
 	next();
 
