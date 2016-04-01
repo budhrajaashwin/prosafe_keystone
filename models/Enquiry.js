@@ -66,10 +66,10 @@ new keystone.Email({
   }).send({
 		to: admins,
 		from: {
-			name: 'prosafe',
-			email: 'contact@prosafe.com'
+			name: enquiry.name.first + ' ' + (enquiry.name.last ? enquiry.name.last : ''),
+			email: enquiry.email
 		},
-		subject: 'New Enquiry for prosafe',
+		subject: 'Enquiry for Prosafe Living',
 		enquiry: enquiry
 	}, function callback(response){
 	 	console.log("Email response", response);

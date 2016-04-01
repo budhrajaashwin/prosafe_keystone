@@ -38,16 +38,26 @@ exports = module.exports = function(req, res) {
 
   function signin(req, res) {
 
-    if (!req.body.email || !req.body.password) return res.json({ success: false });
+    if (!req.body.email || !req.body.password) {
+      // return res.json({ success: false });
+      console.log("Please fill in the credentials to login");
+      // res.locals.error = "Please fill in the credentials to login";
+      req.flash ('error', 'Please fill in the credentials to login');
+      return res.redirect ("/");
+    }
 
     keystone.list('User').model.findOne({ email: req.body.email }).exec(function(err, user) {
 
       if (err || !user) {
-        return res.json({
-          success: false,
-          session: false,
-          message: (err && err.message ? err.message : false) || 'Sorry, there was an issue signing you in, please try again.'
-        });
+        // return res.json({
+        //   success: false,
+        //   session: false,
+        //   message: (err && err.message ? err.message : false) || 'Sorry, there was an issue signing you in, please try again.'
+        // });
+        console.log("User does not exist");
+        // res.locals.error = "User does not exist";
+        req.flash ('error' , 'User does not exist');
+        return res.redirect("/");
       }
 
       keystone.session.signin({ email: user.email, password: req.body.password }, req, res, function(user) {
@@ -61,12 +71,16 @@ exports = module.exports = function(req, res) {
         return res.redirect("/");
 
       }, function(err) {
+        console.log("Wrong password");
 
-        return res.json({
-          success: true,
-          session: false,
-          message: (err && err.message ? err.message : false) || 'Sorry, there was an issue signing you in, please try again.'
-        });
+        // return res.json({
+        //   success: true,
+        //   session: false,
+        //   message: (err && err.message ? err.message : false) || 'Sorry, there was an issue signing you in, please try again.'
+        // });
+        // res.locals.errorMessage = "Wrong password/email";
+        req.flash('error','wrong password');
+        return res.redirect("/");
 
       });
 

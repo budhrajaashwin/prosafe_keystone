@@ -82,6 +82,7 @@
           <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
             Sign in
           </button></a>
+
           {{/unless}}
           <!-- {{#if user }}
           <div class="showUser "> {{user.name.first}}  </div>
@@ -295,6 +296,18 @@
 </div><!-- /container -->
 </div>
 <!-- End Footer -->
+
+<script>
+{{#if messages.error}}
+var errorMessage = '{{messages.error}}';
+if (errorMessage !== '[object Object]') {
+  alert(errorMessage);
+}
+{{/if}}
+
+
+
+</script>
 
 <!-- jQuery Plugins -->
 <script src="/template_assets/plugins/jquery-1.11.1.min.js"></script>
