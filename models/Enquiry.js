@@ -2,9 +2,9 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Enquiry Model
- * =============
- */
+* Enquiry Model
+* =============
+*/
 
 var Enquiry = new keystone.List('Enquiry', {
 	nocreate: true,
@@ -47,35 +47,63 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 
 		if (err) return callback(err);
 
-// 		new keystone.Email('enquiry-notification').send({
-// 			to: admins,
-// 			from: {
-// 				name: 'prosafe',
-// 				email: 'contact@prosafe.com'
-// 			},
-// 			subject: 'New Enquiry for prosafe',
-// 			enquiry: enquiry
-// 		}, callback);
-//
-// 	});
-//
-// };
+		// 		new keystone.Email('enquiry-notification').send({
+		// 			to: admins,
+		// 			from: {
+		// 				name: 'prosafe',
+		// 				email: 'contact@prosafe.com'
+		// 			},
+		// 			subject: 'New Enquiry for prosafe',
+		// 			enquiry: enquiry
+		// 		}, callback);
+		//
+		// 	});
+		//
+		// };
+		// new keystone.UserEmail({
+		// }).send({
+		// 	to:users,
+		// 	from: {
+		// 		name: 'Prosafe Living',
+		// 		email: 'prosafe.living@gmail.com'
+		// 	},
+		// 	subject: 'Rearging your enquiry',
+		// },function xyz(response){
+		// 	console.log("UserEmail response", response);
+		// });
 
-new keystone.Email({
-    templateName: 'enquiry-notification'
-  }).send({
-		to: admins,
-		from: {
-			name: enquiry.name.first + ' ' + (enquiry.name.last ? enquiry.name.last : ''),
-			email: enquiry.email
-		},
-		subject: 'Enquiry for Prosafe Living',
-		enquiry: enquiry
-	}, function callback(response){
-	 	console.log("Email response", response);
-	 });
+		// });
+		
+		//for notifying admin regarding the user's enquiry
+		new keystone.Email({
+			templateName: 'enquiry-notification'
+		}).send({
+			to: admins,
+			from: {
+				name: enquiry.name.first + ' ' + (enquiry.name.last ? enquiry.name.last : ''),
+				email: enquiry.email
+			},
+			subject: 'Enquiry for Prosafe Living',
+			enquiry: enquiry
+		}, function callback(response){
+			console.log("Email response", response);
+		});
 
-});
+		//for notifying users about their enquiry
+		new keystone.Email({
+			templateName:'notifyUser'
+		}).send({
+			to:enquiry.email,
+			from: {
+				name: 'Prosafe Living',
+				email: 'prosafe.living@gmail.com'
+			},
+			subject: 'Rearging your enquiry',
+		},function xyz(response){
+			console.log("UserEmail response", response);
+		});
+
+	});
 
 };
 

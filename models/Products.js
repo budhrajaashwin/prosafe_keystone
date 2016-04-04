@@ -7,9 +7,10 @@ var Products = new keystone.List('Products',{
 });
 
 Products.add({
-  title: { type:String , required: true, default: ''},
-  image: { type: Types.CloudinaryImages },
-  details: { type:Types.Textarea, initial:true },
+	title: { type:String , required: true, default: ''},
+	image: { type: Types.CloudinaryImages },
+	details: { type:Types.Textarea, initial:true },
+	technical: { type:Types.Textarea, initial:true },
 	categories: { type: Types.Relationship, ref: 'ProductsCategory', many: true, initial:true }
 });
 

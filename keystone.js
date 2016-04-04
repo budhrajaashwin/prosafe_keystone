@@ -14,7 +14,6 @@ keystone.init({
 
 	'name': 'Prosafe Living',
 	'brand': 'Prosafe Living',
-
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',

@@ -9,35 +9,49 @@
 
 <!-- Product details -->
 <div class="container padding-bottom padding-top-x2">
-  <div class="row">
-    <div style="
-    display: -webkit-box-flex;
-    display: flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    float: left;
-    margin-left: -14%;"
-    >
+   <div class="row">
+      <div style="
+      display: -webkit-box-flex;
+      display: flex;
+      flex-direction: column;
+      -webkit-flex-direction: column;
+      float: left;
+      margin-left: -14%;"
+      >
 
-    {{#each data.product.image}}
-    <span >
-      <img class="productImage" src="{{url}}" style="margin:35px; width:70px; height:55px; margin-bottom:2px; border: 1px solid #009440; cursor:pointer ">
-    </span>
-    {{/each}}
-  </div>
+      {{#each data.product.image}}
+      <span >
+         <img class="productImage" src="{{url}}" style="margin:35px; width:70px; height:55px; margin-bottom:2px; border: 1px solid #009440; cursor:pointer ">
+      </span>
+      {{/each}}
+   </div>
 
-  <div>
-    <img id="primaryImage" src="{{data.product.image.0.url}}" style="width: 450px; height: 400px; display: -webkit-box-flex; display: flex; float: left; margin-left: -50px;" >
-  </div>
+   <div>
+      <img id="primaryImage" src="{{data.product.image.0.url}}" style="width: 450px; height: 400px; display: -webkit-box-flex; display: flex; float: left; margin-left: -50px;" >
+   </div>
+   <div class="general-title" style="float: right;width: 60%;margin-top: 35px;">
+      <h2> {{data.product.title}} </h2>
+      <br>
+      <br>
+      <h4> {{data.product.details}} </h4>
+      <br>
+      {{#if user}}
+      <h2> Technical Details </h2>
+      <h4> {{data.product.technical}} </h4>
+      {{else}}
+      <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
+         Technical Details
+      </button></a>
+   </div>
 
 
-  <div class="general-title" style="float: right;width: 60%;margin-top: 35px;">
-    <h2> {{data.product.title}} </h2>
-    <br>
-    <br>
-    <h4> {{data.product.details}} </h4>
-  </div>
-  <script src="../js/displayProduct.js"></script>
+   <!-- <div class="general-title" style="float: right;width: 57%; margin-top: 12%;">
+   <h3> Please register yourself and signin to see product's technical details. </h3>
+</div> -->
+{{/if}}
+
+
+<script src="../js/displayProduct.js"></script>
 
 </div><!-- /row -->
 </div><!-- /container -->
