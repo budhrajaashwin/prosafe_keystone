@@ -29,7 +29,7 @@
    <div>
       <img id="primaryImage" src="{{data.product.image.0.url}}" style="width: 450px; height: 400px; display: -webkit-box-flex; display: flex; float: left; margin-left: -50px;" >
    </div>
-   <div class="general-title" style="float: right;width: 60%;margin-top: 35px;">
+   <div class="general-title" style="float:right;width: 60%;margin-top: 30px;">
       <h2> {{data.product.title}} </h2>
       <br>
       <br>
@@ -42,13 +42,14 @@
       <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
          Technical Details
       </button></a>
+      {{/if}}
    </div>
 
 
    <!-- <div class="general-title" style="float: right;width: 57%; margin-top: 12%;">
    <h3> Please register yourself and signin to see product's technical details. </h3>
 </div> -->
-{{/if}}
+
 
 
 <script src="../js/displayProduct.js"></script>
