@@ -27,6 +27,7 @@ exports = module.exports = function(req, res) {
    });
 
    view.on('post', { action: 'login' }, function(next) {
+
       signin(req, res);
    });
    // create a route that handles signin
@@ -50,7 +51,7 @@ exports = module.exports = function(req, res) {
             req.flash ('error' , 'User does not exist');
             return res.redirect("/");
          }
-         keystone.session.signin({ email: user.email, password: req.body.password }, req, res, function(user) {
+         keystone.session.signin({ email: user.email, password: req.body.password}, req, res, function(user) {
             // return res.json({
             //   success: true,
             //   session: true,
