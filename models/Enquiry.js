@@ -73,7 +73,7 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 		// });
 
 		// });
-		
+
 		//for notifying admin regarding the user's enquiry
 		new keystone.Email({
 			templateName: 'enquiry-notification'
@@ -98,7 +98,7 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 				name: 'Prosafe Living',
 				email: 'prosafe.living@gmail.com'
 			},
-			subject: 'Rearging your enquiry',
+			subject: 'Regarding your enquiry',
 		},function xyz(response){
 			console.log("UserEmail response", response);
 		});
