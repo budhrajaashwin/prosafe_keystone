@@ -1,4 +1,5 @@
 var keystone = require ('keystone');
+var Types = keystone.Field.Types;
 
 var ProductsCategory = new keystone.List('ProductsCategory',{
    map: { name: 'title' },
@@ -7,7 +8,8 @@ var ProductsCategory = new keystone.List('ProductsCategory',{
 
 ProductsCategory.add({
    title: { type: String, required: true , default: '' },
-   featured: {type: Boolean, default:false, initial: true}
+   featured: {type: Boolean, default:false, initial: true},
+   image: { type: Types.CloudinaryImage },
 });
 
 ProductsCategory.relationship({ ref: 'Products', path: 'categories'});

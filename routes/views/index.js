@@ -9,6 +9,8 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
+	view.query('categories', keystone.list('ProductsCategory').model.find().where('featured', true).sort('sortOrder'));
+
 	// Render the view
 	view.render('main/home');
 
