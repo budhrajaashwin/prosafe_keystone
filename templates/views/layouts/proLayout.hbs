@@ -138,16 +138,16 @@
                                     <input name="email" type="email" id="email" size="30" value="" placeholder="Email" required/>
                                     <br />
 
-                                    <input name="phone" type="numbers" id="phone" size="30" value="" placeHolder="Phone" required/>
+                                    <input name="phone" type="tel" id="phone" size="30" value="" placeHolder="Phone" required/>
                                     <br />
                                     <!-- Password -->
                                     <input name="password" type="password" id="password" size="30" value="" placeholder="Password" required/>
 
                                     <input name="action" type="hidden" value="register"/>
 
-                                    <!-- Message -->
-                                    <input name="securityKey" type="text" id="comments" placeholder="Enter your security key"></textarea>
-
+                                    <div class="alert alert-danger text-left" role="alert">
+                                      Please verify your email after registering, to sign in
+                                    </div>
                                     <!-- Submit Button -->
                                     <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Register</button>
 
@@ -242,7 +242,7 @@
          </div>
 
          <!-- Latest Tweet -->
-         <div class="col-md-3 col-sm-6 f-inner" style="display: none">
+         <!-- <div class="col-md-3 col-sm-6 f-inner" style="display: none">
             <div class="col-sm-2">
                <i class="fa fa-map-marker fa-lg"></i>
             </div>
@@ -255,10 +255,10 @@
                   first.last@example.com
                </address>
             </div>
-         </div>
+         </div> -->
 
          <!-- Recent Works -->
-         <div class="col-md-3 col-sm-6 f-inner" style="display: none">
+         <!-- <div class="col-md-3 col-sm-6 f-inner" style="display: none">
             <div class="col-sm-2">
                <i class="fa fa-map-marker fa-lg"></i>
             </div>
@@ -271,7 +271,7 @@
                   first.last@example.com
                </address>
             </div>
-         </div>
+         </div> -->
 
       </div>
    </div>

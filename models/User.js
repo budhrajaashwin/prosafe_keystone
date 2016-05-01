@@ -11,7 +11,7 @@ var User = new keystone.List('User');
 User.add({
 	name: { type: Types.Name, required: true, index: true },
 	email: { type: Types.Email, initial: true, required: true, index: true },
-	phone: {type: Types.Number, required: true, initial: false},
+	phone: {type: Types.Text, required: true, initial: false},
 	password: { type: Types.Password, initial: true, required: true },
 	verificationHash: {type: Types.Text, initial: false},
 	verified: {type: Types.Boolean, initial: false, default: false},
@@ -62,12 +62,13 @@ User.schema.post('save', function(user){
 			templateName:'verifyUser'
 		}).send({
 			to:user.email,
+			tags: 'Verification',
 			from: {
 				name: 'Prosafe Living',
 				email: 'prosafe.living@gmail.com'
 			},
 			subject: 'Please verify your account',
-			verificationHash: user.verificationHash,
+			user: user,
 		},function (response){
 			console.log("UserEmail response", response);
 		});

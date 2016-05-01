@@ -37,7 +37,9 @@ keystone.init({
 	'user model': 'User',
 	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx',
 	'mandrill api key': 'k71Up33LlL0rXUvoKb2Teg',
-	'mandrill username':'abhimediratta@gmail.com'
+	'mandrill username':'abhimediratta@gmail.com',
+	'signin logo': ['/template_assets/img/logo.jpg', 220, 150],
+	'signin redirect': '/'
 });
 
 // Load your project's Models

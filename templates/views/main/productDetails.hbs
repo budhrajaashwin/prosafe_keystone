@@ -5,43 +5,38 @@
 </div>
 </div> -->
 <!-- End Header Background Parallax Image -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
 <!-- Product details -->
 <div class="container padding-bottom padding-top-x2">
-   <div class="row">
-      <div style="
-      display: -webkit-box-flex;
-      display: flex;
-      flex-direction: column;
-      -webkit-flex-direction: column;
-      float: left;
-      margin-left: -14%;"
-      >
+   <div class="row product-cont">
+      <div class="col-md-2">
 
       {{#each data.product.image}}
-      <span >
-         <img class="productImage" src="{{url}}" style="margin:35px; width:70px; height:55px; margin-bottom:2px; border: 1px solid #009440; cursor:pointer ">
-      </span>
+        {{#ifeq @index 0 }}
+          <span>
+             <img class="productImage" src="{{url}}" style=" border-radius: 4px;margin:35px; width:90px; height:75px; padding: 10px; margin-bottom:2px; border: 1px solid #009440; cursor:pointer ">
+          </span>
+        {{else}}
+          <span>
+             <img class="productImage" src="{{url}}" style=" border-radius: 4px;margin:35px; width:90px; height:75px; padding: 10px; margin-bottom:2px; cursor:pointer ">
+          </span>
+        {{/ifeq}}
+
       {{/each}}
    </div>
 
-   <div>
-      <img id="primaryImage" src="{{data.product.image.0.url}}" style="width: 450px; height: 400px; display: -webkit-box-flex; display: flex; float: left; margin-left: -50px;" >
+   <div class="col-md-3 text-left" style="padding-top: 40px;">
+      <img id="primaryImage" src="{{data.product.image.0.url}}" style="max-width: 100%;max-height: 100%;">
    </div>
-   <div class="general-title" style="float:right;width: 60%;margin-top: 30px;">
-      <h2> {{data.product.title}} </h2>
-      <br>
-      <br>
+   <div class="general-title col-md-7">
+      <h2 style="margin-bottom: 15px;"> {{data.product.title}} </h2>
       <h4> {{data.product.details}} </h4>
-      <br>
       {{#if user}}
-      <h2> Technical Details </h2>
-      <h4> {{data.product.technical}} </h4>
+        <h2 style="margin-top: 30px;"> Technical Details </h2>
+        <h4> {{data.product.technical}} </h4>
       {{else}}
-      <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
-         Technical Details
-      </button></a>
+        <a href="#" data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
+           Technical Details
+        </button></a>
       {{/if}}
    </div>
 

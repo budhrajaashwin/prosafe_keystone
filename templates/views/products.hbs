@@ -1,35 +1,3 @@
-<!-- <div class="container">
-<h1>Products</h1>
-</div>
-<div class="container">
-{{#if products}}
-{{#each products}}
-<h2>{{name}}
-<div class="pull-right text-muted">19th May 2014</div>
-</h2>
-<div class="row gallery-images">
-{{#if heroImage}}
-<div class="col-sm-4 col-md-4 gallery-image">
-<img src="{{cloudinaryUrl heroImage width='680' height='680'}}" class="img-rounded">
-</div>
-{{/if}}
-<div class="col-sm-8 col-md-8">
-<div class="row">
-{{#each images}}
-<div class="col-xs-4 col-sm-4 col-md-3 gallery-image">
-<img src="{{cloudinaryUrl width='300' height='300'}}" class="img-rounded">
-</div>
-{{/each}}
-</div>
-</div>
-</div>
-{{/each}}
-{{else}}
-<h3 class="text-muted">There are no products yet.</h3>
-{{/if}}
-</div> -->
-
-
 <!-- Header Background Parallax Image -->
 <div id="projects_bg">
   <div class="head-title">
@@ -51,11 +19,9 @@
       </div>
 
       {{#each categories}}
-      <div data-filter=".{{title}}" class="cbp-filter-item">
+      <div data-filter=".{{id}}" class="cbp-filter-item">
         {{title}} <div class="cbp-filter-counter"></div>
-
       </div>
-
       {{/each}}
 
       <!-- <div data-filter=".apartments" class="cbp-filter-item">
@@ -71,12 +37,9 @@
 
 <div id="grid-container" class="cbp-l-grid-masonry">
   <ul>
-
     <!-- Portfolio Item (image and description) -->
     {{#each products}}
-
-
-    <li class="cbp-item {{categories.0.title}} cbp-l-grid-masonry-height2">
+    <li class="cbp-item {{#each categories}}{{id}}{{/each}} cbp-l-grid-masonry-height2">
       <a class="cbp-caption" data-title="{{title}}" href="/products/{{id}}">
         <div class="cbp-caption-defaultWrap">
           <img src="{{image.0.url}}" alt="">
