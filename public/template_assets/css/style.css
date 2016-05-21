@@ -40,6 +40,10 @@ Table of Contents:
 	color: #337AB7 !important;
 }
 
+.BannerImageContainer {
+	margin-top: 100px;
+}
+
 /* ----------------------------------------------------
 	1) BOOTSTRAP OVERRIDE
 ------------------------------------------------------- */
@@ -387,6 +391,19 @@ a:focus {
 	font-family: 'Raleway', sans-serif;
 	font-size: 24px;
 	line-height: 25px;
+	font-weight: 300;
+	letter-spacing: 3px;
+	color: #696969;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	padding: 0;
+	margin: 0;
+}
+
+.general-title h4{
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	line-height: 19px;
 	font-weight: 300;
 	letter-spacing: 3px;
 	color: #696969;
@@ -1708,9 +1725,9 @@ font-weight: 400;
 }
 
 .owl-carousel .owl-item img {
-    height:80px;
-    width:150px;
-    display: block;
+	height: 50px;
+	max-width: 90px;
+	display: block;
 }
 
 .owl-carousel .item {
@@ -1718,35 +1735,35 @@ font-weight: 400;
 }
 
 .banner-text {
+	vertical-align: middle;
 	position: absolute;
-	top: 89px;
+	top: 211px;
 	left: 100px;
-	color: white;
-	font: bold 26px Helvetica, Sans-Serif;
-	letter-spacing: -1px;
-	background: rgba(1, 148, 66, 0.83);
-	padding: 20px;
-	border-radius: 50%;
-	width: 290px;
+	color: #fff;
+	letter-spacing: 1px;
+	background: rgb(2, 104, 46);
+	padding: 23px;
+	line-height: 220px;
+	width: 341px;
 	height: 290px;
-	text-align: left;
+	border-radius: 50%;
+	font-size: 30px;
+	text-align: center;
 }
 
 .banner-text span {
-	margin-top: 49px;
 	display: inline-block;
-	margin-left: 28px;
+  line-height: 40px;
 }
 
 .second-banner {
-	left: 68% !important;
-  height: 250px;
-  width: 250px;
+	margin-top: 20px;
+	left: 48% !important;
+	height: 220px;
+  width: 220px;
 }
 
 .second-banner span {
-	margin-top: 30px;
-	margin-left: 20px;
 }
 
 .product-cont {

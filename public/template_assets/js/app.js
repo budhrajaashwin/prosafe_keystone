@@ -50,7 +50,7 @@
 			soloArrowRightVOffset:0,
 
 			shadow:0,
-			fullWidth:"off",
+			fullWidth:"on",
 			fullScreen:"off",
 
 			spinner:"spinner0",
@@ -59,7 +59,7 @@
 			stopAfterLoops:-1,
 			stopAtSlide:-1,
 
-			shuffle:"off",
+			shuffle:"on",
 			hideTimerBar:"on",
 
 			forceFullWidth:"off",
@@ -76,7 +76,8 @@
 			hideCaptionAtLimit:0,
 			hideAllCaptionAtLilmit:0,
 			startWithSlide:0,
-			fullScreenOffsetContainer: ".header"
+      navOffsetVertical: 100
+			// fullScreenOffsetContainer: ".header"
 		});
 
 
