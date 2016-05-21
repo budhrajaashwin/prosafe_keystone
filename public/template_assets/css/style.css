@@ -32,6 +32,14 @@ Table of Contents:
 --------------
 */
 
+/*
+	CUSTOM CSS
+*/
+
+.blue-color {
+	color: #337AB7 !important;
+}
+
 /* ----------------------------------------------------
 	1) BOOTSTRAP OVERRIDE
 ------------------------------------------------------- */
@@ -375,6 +383,18 @@ a:focus {
 	padding: 0;
 	margin: 0;
 }
+.general-title h3{
+	font-family: 'Raleway', sans-serif;
+	font-size: 24px;
+	line-height: 25px;
+	font-weight: 300;
+	letter-spacing: 3px;
+	color: #696969;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	padding: 0;
+	margin: 0;
+}
 .head-title h2{
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -544,7 +564,7 @@ a:focus {
 ------------------------------------------------------- */
 
 #about_bg{
-	background: url('../img/header_bg/image1.jpg') 50% 0 no-repeat fixed;
+	background: url('../img/header_bg/about.jpg') 50% 0 no-repeat fixed;
 	padding-top: 200px;
 	padding-bottom: 200px;
 	background-size: cover;
@@ -556,7 +576,7 @@ a:focus {
 	background-size: cover;
 }
 #projects_bg{
-	background: url('../img/header_bg/image3.jpg') 50% 0 no-repeat fixed;
+	background: url('../img/header_bg/products.jpg') 50% 0 no-repeat fixed;
 	padding-top: 200px;
 	padding-bottom: 200px;
 	background-size: cover;
@@ -564,6 +584,13 @@ a:focus {
 #blog_bg{
 	color: #fff;
 	background: url('../img/header_bg/image4.jpg') 50% 0 no-repeat fixed;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	background-size: cover;
+}
+#contact_bg{
+	color: #fff;
+	background: url('../img/header_bg/hands.jpg') 50% 0 no-repeat fixed;
 	padding-top: 200px;
 	padding-bottom: 200px;
 	background-size: cover;
@@ -1023,7 +1050,7 @@ a:focus {
 	transform: scale(1.1);
 }
 #our-clients{
-	background-color: #f2f2f2;
+	background-color: #fff;
 }
 
 /* ----------------------------------------------------
@@ -1679,50 +1706,51 @@ font-weight: 400;
 .bg-transparent {
   background: rgba(0, 0, 0, 0.7);
 }
-head2{
-	position: absolute;
-	top:100px;
-	left:50px;
-	width: 45%;
- 	color: white;
-	font: bold 24px/45px Helvetica, Sans-Serif;
-  letter-spacing: -1px;
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-	border-radius: 5px 20px 5px;
+
+.owl-carousel .owl-item img {
+    height:80px;
+    width:150px;
+    display: block;
 }
 
-head3{
-	position: absolute;
-	top:100px;
-	right:50px;
-	width: 45%;
- 	color: white;
-	font: bold 24px/45px Helvetica, Sans-Serif;
-  letter-spacing: -1px;
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-	border-radius: 5px 20px 5px;
+.owl-carousel .item {
+    margin:20px;
 }
 
-head4{
+.banner-text {
 	position: absolute;
-	top:100px;
-	left:50px;
-	width: 45%;
- 	color: white;
-	font: bold 24px/45px Helvetica, Sans-Serif;
-  letter-spacing: -1px;
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-	border-radius: 5px 20px 5px;
+	top: 89px;
+	left: 100px;
+	color: white;
+	font: bold 26px Helvetica, Sans-Serif;
+	letter-spacing: -1px;
+	background: rgba(1, 148, 66, 0.83);
+	padding: 20px;
+	border-radius: 50%;
+	width: 290px;
+	height: 290px;
+	text-align: left;
+}
+
+.banner-text span {
+	margin-top: 49px;
+	display: inline-block;
+	margin-left: 28px;
+}
+
+.second-banner {
+	left: 68% !important;
+  height: 250px;
+  width: 250px;
+}
+
+.second-banner span {
+	margin-top: 30px;
+	margin-left: 20px;
 }
 
 .product-cont {
 	border: 1px solid rgba(128, 128, 128, 0.19);
-border-radius: 10px;
-padding: 31px;
+	border-radius: 10px;
+	padding: 31px;
 }

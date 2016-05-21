@@ -12,7 +12,7 @@
 			dottedOverlay:"none",
 			delay:9000,
 			startwidth:1170,
-			startheight:700,
+			startheight:400,
 			hideThumbs:200,
 
 			thumbWidth:100,
@@ -51,7 +51,7 @@
 
 			shadow:0,
 			fullWidth:"off",
-			fullScreen:"on",
+			fullScreen:"off",
 
 			spinner:"spinner0",
 
@@ -146,9 +146,24 @@
 
 		$('#owl-demo').owlCarousel({
 		  autoPlay: 3000, //Set AutoPlay to 3 seconds
-		  items : 3,
-      autoWidth: true,
+		  items : 6,
+      afterUpdate: function () {
+        updateSize();
+      },
+      afterInit:function(){
+        updateSize();
+      }
+      // autoWidth: true,
 		});
+
+    function updateSize(){
+      var minHeight=parseInt($('.owl-item').eq(0).css('height'));
+      $('.owl-item').each(function () {
+          var thisHeight = parseInt($(this).css('height'));
+          minHeight=(minHeight<=thisHeight?minHeight:thisHeight);
+      });
+      $('.owl-wrapper-outer').css('height',minHeight+'px');
+    }
 
 		$('#owl-testimonials, #owl-office').owlCarousel({
 		  navigation : false,
@@ -255,7 +270,7 @@
 
 		gridAdjustment: 'responsive',
 
-		caption: 'revealBottom',
+		caption: '',
 
 		displayType: 'lazyLoading',
 
