@@ -76,6 +76,7 @@
 			hideCaptionAtLimit:0,
 			hideAllCaptionAtLilmit:0,
 			startWithSlide:0,
+      caption: 'opacity',
       navOffsetVertical: 100
 			// fullScreenOffsetContainer: ".header"
 		});

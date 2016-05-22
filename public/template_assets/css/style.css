@@ -62,6 +62,10 @@ Table of Contents:
 	height: 130px;
 }
 
+.cbp-caption-activeWrap, .cbp-caption-defaultWrap {
+	text-align: center;
+}
+
 /* ----------------------------------------------------
 	1) BOOTSTRAP OVERRIDE
 ------------------------------------------------------- */
