@@ -6,7 +6,6 @@
 </div>
 <!-- End Header Background Parallax Image -->
 
-<!-- Projects -->
 <div class="container padding-bottom padding-top">
   <div class="row">
 
@@ -19,50 +18,39 @@
       </div>
 
       {{#each categories}}
-        <div data-filter=".{{id}}" class="cbp-filter-item">
-          {{title}} <div class="cbp-filter-counter"></div>
-        </div>
+      <div data-filter=".{{id}}" class="cbp-filter-item">
+        {{title}} <div class="cbp-filter-counter"></div>
+      </div>
       {{/each}}
-
-      <!-- <div data-filter=".apartments" class="cbp-filter-item">
-      Houses <div class="cbp-filter-counter"></div>
     </div>
-    <div data-filter=".houses" class="cbp-filter-item">
-    Hotels <div class="cbp-filter-counter"></div>
-  </div>
-  <div data-filter=".architecture" class="cbp-filter-item">
-  Malls & Public Utility Areas <div class="cbp-filter-counter"></div>
-</div> -->
-</div>
 
-<div id="grid-container" class="cbp-l-grid-masonry cbp-caption-overlayBottom">
-  <ul>
-    <!-- Portfolio Item (image and description) -->
-    {{#each products}}
-    <li class="cbp-item {{#each categories}}{{id}}{{/each}} cbp-l-grid-masonry-height2">
-      <a class="cbp-caption" data-title="{{title}}" href="/products/{{id}}">
-        <div class="cbp-caption-defaultWrap">
-          <img src="{{image.0.url}}" alt="">
-        </div>
-
-        <div class="cbp-caption-activeWrap">
-          <div class="cbp-l-caption-alignCenter">
-            <div class="cbp-l-caption-body">
-              <div class="cbp-l-caption-title">{{title}}</div>
+    <div id="grid-container" class="cbp-l-grid-masonry cbp-caption-overlayBottom">
+      <ul>
+        <!-- Portfolio Item (image and description) -->
+        {{#each products}}
+        <li class="cbp-item {{#each categories}}{{id}}{{/each}} cbp-l-grid-masonry-height2">
+          <a class="cbp-caption" data-title="{{title}}" href="/products/{{id}}">
+            <div class="cbp-caption-defaultWrap">
+              <img src="{{image.0.url}}" alt="">
             </div>
-          </div>
-        </div>
-      </a>
-    </li>
 
-    {{/each}}
+            <div class="cbp-caption-activeWrap">
+              <div class="cbp-l-caption-alignCenter">
+                <div class="cbp-l-caption-body">
+                  <div class="cbp-l-caption-title">{{title}}</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
 
-  </ul>
-</div>
+        {{/each}}
 
-<!-- CUBE PORTFOLIO -->
+      </ul>
+    </div>
+
+    <!-- CUBE PORTFOLIO -->
 
 
-</div><!-- /row -->
+  </div><!-- /row -->
 </div><!-- /container -->
-<!-- End Projects -->
