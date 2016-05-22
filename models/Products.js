@@ -9,6 +9,7 @@ var Products = new keystone.List('Products',{
 Products.add({
 	title: { type:String , required: true, default: ''},
 	image: { type: Types.CloudinaryImages },
+	featured: {type: Boolean, default:false, initial: false},
 	details: { type:Types.Textarea, initial:true },
 	technical: { type:Types.Textarea, initial:true },
 	categories: { type: Types.Relationship, ref: 'ProductsCategory', many: true, initial:true }

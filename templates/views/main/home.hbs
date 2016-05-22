@@ -126,7 +126,7 @@
 <div class="padding-top">
 
   <!-- Who We Are -->
-  <div class="container padding-bottom">
+  <div class="container">
 
 
     <div class="row">
@@ -238,38 +238,50 @@
   <div class="container">
     <!-- Section General Title -->
     <div class="general-title text-center">
-      <h2>Featured categories</h2>
+      <h2>Featured products</h2>
       <div class="space-bottom-2x"></div>
     </div>
     <div class="row">
 
-      <div id="grid-container" class="cbp-l-grid-team">
+      <!-- <div id="grid-container" class="cbp-l-grid-team">
         <ul>
-          {{#each categories}}
+          {{#each products}}
             <li class="cbp-item ideas motion text-center box-shadow-green">
               <div style="border: 1px solid #009440;border-radius: 4px;">
                 <a class="defaultWrap text-center" href="/products?filter={{id}}">
-                  <img src="{{image.secure_url}}" alt="{{title}}" style="width: 200px;height: 170px;width: auto;">
+                  <img src="{{image.0.url}}" alt="{{title}}" style="width: 200px;height: 170px;width: auto;">
                   <div class="text-center">
-                    <a href="/products" class="cbp-l-grid-blog-title cbp-singlePage">{{title}}</a>
+                    <a href="/products/{{id}}" class="cbp-l-grid-blog-title cbp-singlePage">{{title}}</a>
                   </div>
                 </a>
               </div>
-              <!-- <a class="cbp-caption" data-title="{{title}}" href="/products?filter{{id}}">
-                <div class="cbp-caption-defaultWrap">
-                  <img src="{{image.secure_url}}" alt="">
-                </div>
 
-                <div class="cbp-caption-activeWrap">
-                  <div class="cbp-l-caption-alignCenter">
-                    <div class="cbp-l-caption-body">
-                      <div class="cbp-l-caption-title">{{title}}</div>
-                    </div>
-                  </div>
-                </div>
-              </a> -->
             </li>
           {{/each}}
+        </ul>
+      </div> -->
+      <div id="grid-container" class="cbp-l-grid-masonry cbp-caption-overlayBottom">
+        <ul>
+          <!-- Portfolio Item (image and description) -->
+          {{#each products}}
+          <li class="cbp-item {{#each categories}}{{id}}{{/each}} cbp-l-grid-masonry-height2">
+            <a class="cbp-caption" data-title="{{title}}" href="/products/{{id}}">
+              <div class="cbp-caption-defaultWrap">
+                <img src="{{image.0.url}}" alt="">
+              </div>
+
+              <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title">{{title}}</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          {{/each}}
+
         </ul>
       </div>
 

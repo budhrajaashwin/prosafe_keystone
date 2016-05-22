@@ -59,7 +59,7 @@
 			stopAfterLoops:-1,
 			stopAtSlide:-1,
 
-			shuffle:"on",
+			shuffle:"off",
 			hideTimerBar:"on",
 
 			forceFullWidth:"off",

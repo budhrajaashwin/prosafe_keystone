@@ -36,12 +36,30 @@ Table of Contents:
 	CUSTOM CSS
 */
 
-.blue-color {
-	color: #337AB7 !important;
-}
-
 .BannerImageContainer {
 	margin-top: 100px;
+}
+
+.p-t-23 {
+	padding-top: 23px;
+}
+
+.p-t-18 {
+	padding-top: 18px;
+}
+
+.brand-country {
+	text-transform: uppercase;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+}
+
+.f-s-16 {
+	font-size: 16px;
+}
+
+.kdesign {
+	height: 130px;
 }
 
 /* ----------------------------------------------------
@@ -1203,8 +1221,8 @@ acronym{
 	padding-bottom: 20px;
 }
 .f-inner{
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 .f-inner:hover{
 	background-color: #009540;
@@ -1219,7 +1237,7 @@ acronym{
 	padding-left: 0;
 }
 .f-logo{
-	margin-top: 70px;
+	margin-top: 30px;
 }
 .f-logo h2{
 	font-family: 'Raleway', sans-serif;
@@ -1227,6 +1245,7 @@ acronym{
 	line-height: 31px;
 	font-weight: 300;
 	letter-spacing: 3px;
+	text-transform: uppercase;
 	color: #fff;
 	-webkit-font-smoothing: antialiased;
 }
@@ -1767,7 +1786,6 @@ font-weight: 400;
 }
 
 .product-cont {
-	border: 1px solid rgba(128, 128, 128, 0.19);
-	border-radius: 10px;
-	padding: 31px;
+	padding: 50px 40px;
+	min-height: 350px;
 }

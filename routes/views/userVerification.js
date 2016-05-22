@@ -21,13 +21,10 @@ exports = module.exports = function(req, res) {
         }
         var user = result;
         user.verified = true;
-        user.save().then(function (response) {
+        user.save().exec(function (err,response) {
           console.log('verified user', user);
           return res.redirect("/keystone/signin");
-        }).catch(function (err) {
-          console.error(err);
-          return next();
-        })
+        });
 
       });
     } else {

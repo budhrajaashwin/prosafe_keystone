@@ -18,11 +18,16 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 
 		if (req.params.id) {
-			console.log('result', req.params.id);
 			keystone.list('Products').model.findById(locals.filters.id).exec(function(err, result) {
-				console.log(result);
 				locals.data.product = result;
-				next();
+				keystone.list('Products').model.find({
+					'categories': { $in: result.categories },
+					'_id': { $ne: result['_id'] }
+				}).exec(function (err, resultRelated) {
+					console.log("Related products", resultRelated);
+					locals.data.related = resultRelated;
+					next();
+				})
 			});
 		} else {
 			console.log('result not there');

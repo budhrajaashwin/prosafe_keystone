@@ -8,7 +8,7 @@ var ProductsCategory = new keystone.List('ProductsCategory',{
 
 ProductsCategory.add({
    title: { type: String, required: true , default: '' },
-   featured: {type: Boolean, default:false, initial: true},
+   featured: {type: Boolean, default:false, initial: false},
    image: { type: Types.CloudinaryImage },
 });
 
