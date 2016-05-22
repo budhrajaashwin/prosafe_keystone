@@ -7,54 +7,58 @@
 <!-- End Header Background Parallax Image -->
 <!-- Product details -->
 <div class="container padding-bottom padding-top-x2">
-   <div class="row product-cont">
-      <div class="col-md-2">
+  <div class="row product-cont">
+    <div class="col-md-2">
 
       {{#each data.product.image}}
-        {{#ifeq @index 0 }}
-          <span>
-             <img class="productImage" src="{{url}}" style=" border-radius: 4px;margin:20px; width:90px; height:75px; padding: 10px; margin-bottom:2px; border: 1px solid #009440; cursor:pointer; ">
-          </span>
-        {{else}}
-          <span>
-             <img class="productImage" src="{{url}}" style=" border-radius: 4px;margin:20px; width:90px; height:75px; padding: 10px; margin-bottom:2px; cursor:pointer;border: 1px solid #f2f2f2; ">
-          </span>
-        {{/ifeq}}
+      {{#ifeq @index 0 }}
+      <span>
+        <img class="productImage" src="{{url}}" style=" border-radius: 4px;margin:20px; width:90px; height:75px; padding: 10px; margin-bottom:2px; border: 1px solid #009440; cursor:pointer; ">
+      </span>
+      {{else}}
+      <span>
+        <img class="productImage" src="{{url}}" style=" border-radius: 4px;margin:20px; width:90px; height:75px; padding: 10px; margin-bottom:2px; cursor:pointer;border: 1px solid #f2f2f2; ">
+      </span>
+      {{/ifeq}}
 
       {{/each}}
-   </div>
+    </div>
 
-   <div class="col-md-3 text-left" style="padding-top: 40px;">
+    <div class="col-md-3 text-left" style="padding-top: 40px;">
       <img id="primaryImage" src="{{data.product.image.0.url}}" style="max-width: 100%;max-height: 100%;">
-   </div>
-   <div class="general-title col-md-7">
+    </div>
+    <div class="general-title col-md-7">
       <h2 style="margin-bottom: 15px;"> {{data.product.title}} </h2>
       <h4> {{data.product.details}} </h4>
       {{#if user}}
         <h2 style="margin-top: 30px;"> Technical Details </h2>
         <h4> {{data.product.technical}} </h4>
       {{else}}
-        <a href="#" data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
-           Technical Details
-        </button></a>
+        <!-- <a href="#" data-toggle="modal" data-target="#myModal"> -->
+        <h2 style="margin-top: 30px;"> Technical Details </h2>
+          <!-- <div class="general-title" style="float: right;width: 57%; margin-top: 12%;"> -->
+            <h4 class="p-t-23">Please login to see product's technical details. </h4>
+           <!-- </div> -->
+          <!-- <button class="buttonn gold-btn f-action " id="singinButton">
+            Technical Details
+          </button> -->
+        <!-- </a> -->
       {{/if}}
-   </div>
- </div><!-- /row -->
+    </div>
+  </div><!-- /row -->
 
-   <section class="row">
-     <div class="general-title text-center">
-       <h2>Related products</h2>
-       <div class="space-bottom-2x"></div>
-     </div>
-     <div>
+  <section class="row">
+    <div class="general-title text-center">
+      <h2>Related products</h2>
+      <div class="space-bottom-2x"></div>
+    </div>
+    <div>
 
-     </div>
-   </section>
+    </div>
+  </section>
 
 
-   <div class="general-title" style="float: right;width: 57%; margin-top: 12%;">
-     <h3>Please signin to see product's technical details. </h3>
-  </div>
+
 
 
 </div><!-- /container -->
