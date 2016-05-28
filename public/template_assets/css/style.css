@@ -91,6 +91,10 @@ Table of Contents:
 	line-height: 30px;
 }
 
+.related-products .cbp-l-caption-alignCenter {
+    display: block !important;
+}
+
 .related-products img {
 	max-height: 69% !important;
 }
