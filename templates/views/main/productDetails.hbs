@@ -25,7 +25,9 @@
       <h3 style="margin-top: 30px;margin-bottom: 15px;">Technical Details</h3>
       {{#if user}}
         <p class="pre-wrap" style="margin-bottom: 15px;">{{data.product.technical}}</p>
-        <a style="padding: 7px; margin-left: 0px;margin-top: 15px;" target="_blank" href="/file?path={{uc data.product.guideline.path}}/{{data.product.guideline.filename}}" class="buttonn gold-btn">Download Guideline</a>
+        {{#if data.product.guideline}}
+          <a style="padding: 7px; margin-left: 0px;margin-top: 15px;" target="_blank" href="/file?path={{uc data.product.guideline.path}}/{{data.product.guideline.filename}}" class="buttonn gold-btn">Download Guideline</a>
+        {{/if}}
       {{else}}
         <p>Please login to see product's technical details and guidelines. </p>
       {{/if}}
@@ -33,7 +35,7 @@
     </div>
   </div><!-- /row -->
 
-  <section class="row">
+  <section class="row margin-top-x2">
     <div class="general-title text-center">
       <h3>Related products</h3>
       <div class="space-bottom-2x"></div>
