@@ -12,7 +12,13 @@ Products.add({
 	featured: {type: Boolean, default:false, initial: false},
 	details: { type:Types.Textarea, initial:true },
 	technical: { type:Types.Textarea, initial:true },
-	categories: { type: Types.Relationship, ref: 'ProductsCategory', many: true, initial:true }
+	categories: { type: Types.Relationship, ref: 'ProductsCategory', many: true, initial:true },
+	guideline: { type: Types.LocalFile, allowedTypes: ['application/pdf'],
+		dest: '/ProsafeData/files',
+		filename: function(item, file){
+			return 'ProsafeGuideline_' + item.title + '.' + file.extension
+		}
+	}
 });
 
 Products.register();

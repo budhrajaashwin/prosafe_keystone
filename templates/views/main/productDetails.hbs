@@ -20,14 +20,16 @@
       <img id="primaryImage" src="{{data.product.image.0.url}}" style="max-width: 100%;max-height: 100%;">
     </div>
     <div class="general-title col-md-7">
-      <h3 style="margin-bottom: 15px;"> {{data.product.title}} </h3>
-      <p class="pre-wrap"> {{data.product.details}} </p>
-      <h3 style="margin-top: 30px;"> Technical Details </h3>
+      <h3 style="margin-bottom: 15px;">{{data.product.title}}</h3>
+      <p class="pre-wrap">{{data.product.details}}</p>
+      <h3 style="margin-top: 30px;margin-bottom: 15px;">Technical Details</h3>
       {{#if user}}
-      <p class="pre-wrap"> {{data.product.technical}} </p>
+        <p class="pre-wrap" style="margin-bottom: 15px;">{{data.product.technical}}</p>
+        <a style="padding: 7px; margin-left: 0px;margin-top: 15px;" target="_blank" href="/file?path={{uc data.product.guideline.path}}/{{data.product.guideline.filename}}" class="buttonn gold-btn">Download Guideline</a>
       {{else}}
-      <p style="padding-top: 15px;">Please login to see product's technical details. </p>
+        <p>Please login to see product's technical details and guidelines. </p>
       {{/if}}
+
     </div>
   </div><!-- /row -->
 

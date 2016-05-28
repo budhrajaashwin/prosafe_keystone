@@ -45,6 +45,7 @@ exports = module.exports = function(app) {
 	app.get('/products/:id', routes.views.products);
 	app.get('/users', routes.views.users);
 	app.get('/user/:verificationHash', routes.views.userVerification);
+	app.get('/file', routes.views.returnFile);
 
 	//Login route
 	app.post('/register', routes.views.users);
