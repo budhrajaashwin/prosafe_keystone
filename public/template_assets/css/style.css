@@ -83,6 +83,10 @@ Table of Contents:
 	font-size: 14px;
 }
 
+.related-products img {
+	max-height: 69% !important;
+}
+
 /* ----------------------------------------------------
 	1) BOOTSTRAP OVERRIDE
 ------------------------------------------------------- */
