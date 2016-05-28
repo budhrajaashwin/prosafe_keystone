@@ -62,8 +62,25 @@ Table of Contents:
 	height: 130px;
 }
 
+.pre-wrap {
+	white-space: pre-wrap;
+}
+
 .cbp-caption-activeWrap, .cbp-caption-defaultWrap {
 	text-align: center;
+}
+
+.related-products .cbp-item {
+	height: 120px;
+	width: 230px;
+}
+
+.related-products .cbp-caption-activeWrap {
+	height: 30px !important;
+}
+
+.related-products .cbp-l-caption-title {
+	font-size: 14px;
 }
 
 /* ----------------------------------------------------
