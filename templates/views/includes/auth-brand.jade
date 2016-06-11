@@ -1,0 +1,7 @@
+.auth-box-brand
+	if Array.isArray(logo)
+		a(href='/').auth-box-logo: img(src=logo[0], width=logo[1], height=logo[2], alt=brand)
+	else if logo
+		a(href='/').auth-box-logo: img(src=logo, alt=brand)
+	else
+		a(href='/').auth-box-logo: img(src='/template_assets/img/logo2.jpg', width=220, height=150, alt=brand)

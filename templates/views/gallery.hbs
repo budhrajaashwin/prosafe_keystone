@@ -1,32 +1,43 @@
-<div class="container">
-	<h1>Gallery</h1>
+<!-- Header Background Parallax Image -->
+<div id="projects_bg">
+  <div class="head-title">
+    <h2>Gallery</h2>
+  </div>
 </div>
-<div class="container">
-	<!-- if galleries -->
-	{{#if galleries}}
-		{{#each galleries}}
-		<h2>{{name}}
-			<div class="pull-right text-muted">19th May 2014</div>
-		</h2>
-		<div class="row gallery-images">
-				{{#if heroImage}}
-				<div class="col-sm-4 col-md-4 gallery-image">
-					<img src="{{cloudinaryUrl heroImage width='680' height='680'}}" class="img-rounded">
-				</div>
-				{{/if}}
-				<div class="col-sm-8 col-md-8">
-					<div class="row">
-						{{#each images}}
-						<div class="col-xs-4 col-sm-4 col-md-3 gallery-image">
-							<img src="{{cloudinaryUrl width='300' height='300'}}" class="img-rounded">
-						</div>
-						{{/each}}
-					</div>
-				</div>
-		</div>
-		{{/each}}
-	{{else}}
-	<!-- else -->
-	<h3 class="text-muted">There are no image galleries yet.</h3>
-	{{/if}}
-</div>
+<!-- End Header Background Parallax Image -->
+
+<div class="container padding-bottom padding-top">
+  <div class="row">
+
+    <!-- CUBE PORTFOLIO -->
+
+    <!-- Portfolio Filter -->
+    <div id="grid-container" data-lightbox="yes" class="cbp-l-grid-masonry cbp-caption-overlayBottom">
+      <ul>
+        <!-- Portfolio Item (image and description) -->
+        {{#each galleries}}
+        	<li class="cbp-item cbp-l-grid-masonry-height2">
+	          <a class="cbp-caption cbp-lightbox" data-title="{{name}}" href="{{image.url}}">
+	            <div class="cbp-caption-defaultWrap">
+	              <img src="{{image.url}}" alt="">
+	            </div>
+
+	            <div class="cbp-caption-activeWrap">
+	              <div class="cbp-l-caption-alignCenter">
+	                <div class="cbp-l-caption-body">
+	                  <div class="cbp-l-caption-title">{{name}}</div>
+	                </div>
+	              </div>
+	            </div>
+	          </a>
+	        </li>
+
+				{{/each}}
+      </ul>
+    </div>
+
+    <!-- CUBE PORTFOLIO -->
+
+
+  </div><!-- /row -->
+</div><!-- /container -->

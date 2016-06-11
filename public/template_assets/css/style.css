@@ -36,6 +36,24 @@ Table of Contents:
 	CUSTOM CSS
 */
 
+.guideline-title {
+	background: #00943F;
+	color: white;
+	padding: 10px 15px;
+	display: inline-block;
+}
+
+.guideline-title > span {
+	max-width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.guideline-title i {
+	margin-left: 10px;
+}
+
 .BannerImageContainer {
 	margin-top: 100px;
 }

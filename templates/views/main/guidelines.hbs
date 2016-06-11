@@ -1,0 +1,23 @@
+<!-- Header Background Parallax Image -->
+<div>
+  <!-- <div class="head-title"> -->
+    <h2>Guidelines</h2>
+  <!-- </div> -->
+</div>
+<!-- End Header Background Parallax Image -->
+
+<div class="container padding-bottom padding-top">
+  <div class="row">
+
+    {{#each data.guidelines}}
+      <a title="Download Guideline" href="/file?path={{uc guideline.path}}/{{guideline.filename}}">
+        <div class="guideline-title">
+          <span>{{title}}</span>
+
+          <i class="fa fa-download"></i>
+        </div>
+      </a>
+    {{/each}}
+
+  </div><!-- /row -->
+</div><!-- /container -->

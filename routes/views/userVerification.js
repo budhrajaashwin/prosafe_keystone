@@ -21,7 +21,7 @@ exports = module.exports = function(req, res) {
         }
         var user = result;
         user.verified = true;
-        user.save().exec(function (err,response) {
+        user.save(function (err) {
           console.log('verified user', user);
           return res.redirect("/keystone/signin");
         });

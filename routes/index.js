@@ -41,14 +41,18 @@ exports = module.exports = function(app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 	app.get('/products', routes.views.categories);
+	app.get('/guidelines', routes.views.guidelines);
 	app.get('/about',routes.views.about);
 	app.get('/products/:id', routes.views.products);
 	app.get('/users', routes.views.users);
 	app.get('/user/:verificationHash', routes.views.userVerification);
+	app.get('/reset/:resetHash', routes.views.resetPassword);
 	app.get('/file', routes.views.returnFile);
 
 	//Login route
 	app.post('/register', routes.views.users);
+	app.post('/forgot', routes.views.forgotPassword);
+	app.post('/reset/:resetHash', routes.views.changePassword);
 	app.post('/login', routes.views.users);
 	app.post('/signin', routes.views.users);
 	app.get('/signout', routes.views.users);

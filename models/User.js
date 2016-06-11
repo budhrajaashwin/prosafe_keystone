@@ -14,6 +14,7 @@ User.add({
 	phone: {type: Types.Text, required: true, initial: false},
 	password: { type: Types.Password, initial: true, required: true },
 	verificationHash: {type: Types.Text, initial: false},
+	resetHash: {type: Types.Text, initial: false},
 	verified: {type: Types.Boolean, initial: false, default: false},
 	createdAt: { type: Date, default: Date.now },
 }, 'Permissions', {

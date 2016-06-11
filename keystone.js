@@ -10,6 +10,10 @@ var handlebars = require('express-handlebars');
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
+keystone.set('email transport', 'mailgun');
+keystone.set('mailgun api key', 'key-d9c756949214a09e784af7b39a13667c');
+keystone.set('mailgun domain', 'sandbox743f3bd9d2014a9aa5c61154c3dbdc86.mailgun.org');
+
 keystone.init({
 
 	'name': 'Prosafe Living',
@@ -36,8 +40,8 @@ keystone.init({
 	'cookie secret': 'bbaisbfakbfiqibqnlqqwoerndslknv ',
 	'user model': 'User',
 	'cloudinary config': 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx',
-	'mandrill api key': 'k71Up33LlL0rXUvoKb2Teg',
-	'mandrill username':'abhimediratta@gmail.com',
+	// 'mandrill api key': 'k71Up33LlL0rXUvoKb2Teg',
+	// 'mandrill username':'abhimediratta@gmail.com',
 	'signin logo': ['/template_assets/img/logo.jpg', 220, 150],
 	'signin redirect': '/'
 });
@@ -120,6 +124,7 @@ keystone.set('nav', {
 	'enquiries': 'enquiries',
 	'users': 'users',
 	'products' : ['products', 'ProductsCategory'],
+	'guidelines': 'guidelines',
 	'News': 'News'
 });
 

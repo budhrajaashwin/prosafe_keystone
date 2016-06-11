@@ -107,11 +107,15 @@
                         <!-- <textarea name="comments" cols="40" rows="5" id="comments" placeholder="Message"></textarea> -->
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Sign in</button>
+                        <button type="submit" class="btn black-btn blog-btn submit" style="margin-bottom: 0px !important;" id="submit" value="Submit">Sign in</button>
+                        <div style="text-align: left; margin-bottom: 10px;">
+                          <a href="javascript:;" id="forgotPassword">Forgot Password?</a>
+                        </div>
 
                       </div>
                       <div style="float:right">
-                        Not a member yet ? <button type="button" id="registerHere" class="formButton"> Register Here </button>
+                         <!-- <button type="button" id="forgotPassword" class="formButton">Forgot Password?</button> -->
+                        Not a member yet? <button type="button" id="registerHere" class="formButton"> Register Here </button>
                       </div>
                     </fieldset>
                   </form>
@@ -145,21 +149,22 @@
                     </fieldset>
                   </form>
 
-                  <!-- <form method="post" action="/forgot" id="forgotForm" class="hide">
+                  <form method="post" action="/forgot" id="forgotForm" class="hide">
                     <fieldset>
                       <div class="col-md-12">
 
+                        <input name="email" type="email" id="email" size="30" value="" placeholder="Email" required/>
 
-
+                        <input name="forgot" type="hidden" value="forgot"/>
 
                         <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Submit</button>
 
                       </div>
                       <div style="float:right">
-                        Already a member? <button type="button" id="signin" class="formButton"> Cancel </button>
+                        <button type="button" id="signin" class="formButton"> Cancel </button>
                       </div>
                     </fieldset>
-                  </form> -->
+                  </form>
 
                 </div>
                 <!-- End Contact Form -->

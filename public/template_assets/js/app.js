@@ -279,10 +279,10 @@
 		displayTypeSpeed: 100,
 
 		// lightbox
-		// lightboxDelegate: '.cbp-lightbox',
-		 lightboxGallery: false,
-		// lightboxTitleSrc: 'data-title',
-		// lightboxCounter: '<div class="cbp-popup-lightbox-counter">{{current}} of {{total}}</div>',
+		lightboxDelegate: '.cbp-lightbox',
+		 lightboxGallery: gridContainer.attr('data-lightbox') === 'yes' ? true : false,
+		lightboxTitleSrc: 'data-title',
+		lightboxCounter: '<div class="cbp-popup-lightbox-counter">{{current}} of {{total}}</div>',
 
 		// singlePage popup
 		// singlePageDelegate: '.cbp-singlePage',
