@@ -67,31 +67,18 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" >
-          <!-- <li class="active"><a href="/">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="services.html">Guidelines</a></li> -->
-
           {{# each navLinks}}
-          <li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-            <a href="{{ href }}">{{ label }}</a>
-          </li>
+            <li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+              <a href="{{ href }}">{{ label }}</a>
+            </li>
           {{/each}}
 
           {{#unless user}}
-
-          <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
-            Sign in
-          </button></a>
-
+            <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
+              Sign in
+            </button></a>
           {{/unless}}
-          <!-- {{#if user }}
-          <div class="showUser "> {{user.name.first}}  </div>
-          {{else}}
-          <a href="#"  data-toggle="modal" data-target="#myModal"><button class="buttonn gold-btn f-action " id="singinButton">
-          Sign in
-        </button></a>
-        {{/if}} -->
+
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
           <div class="modal-dialog">
@@ -157,6 +144,22 @@
                       </div>
                     </fieldset>
                   </form>
+
+                  <!-- <form method="post" action="/forgot" id="forgotForm" class="hide">
+                    <fieldset>
+                      <div class="col-md-12">
+
+
+
+
+                        <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Submit</button>
+
+                      </div>
+                      <div style="float:right">
+                        Already a member? <button type="button" id="signin" class="formButton"> Cancel </button>
+                      </div>
+                    </fieldset>
+                  </form> -->
 
                 </div>
                 <!-- End Contact Form -->
