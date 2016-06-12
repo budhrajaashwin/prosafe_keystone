@@ -12,7 +12,7 @@ var handlebars = require('express-handlebars');
 
 keystone.set('email transport', 'mailgun');
 keystone.set('mailgun api key', 'key-d9c756949214a09e784af7b39a13667c');
-keystone.set('mailgun domain', 'sandbox743f3bd9d2014a9aa5c61154c3dbdc86.mailgun.org');
+keystone.set('mailgun domain', 'mg.prosafeliving.com');
 
 keystone.init({
 

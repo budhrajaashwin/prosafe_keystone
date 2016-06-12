@@ -222,7 +222,7 @@ Table of Contents:
 .nav>li>a {
 	position: relative;
 	display: block;
-	padding: 25px 20px;
+	padding: 25px 8px;
 }
 .navbar-default .navbar-brand {
 	font-family: 'Raleway', sans-serif;
