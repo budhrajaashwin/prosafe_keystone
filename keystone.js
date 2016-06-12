@@ -128,7 +128,7 @@ keystone.set('nav', {
 	'News': 'News'
 });
 
-keystone.set('port',8000);
+keystone.set('port',80);
 
 // keystone.set('cloudinary config', 'cloudinary://456526832957653:qnKaxhBS7htL6ySXIgGQxf8VTy8@djzfxtdtx' );
 // keystone.init({
