@@ -250,7 +250,7 @@
 		CUBE PORTFOLIO
 	=============================================== */
 
-	var gridContainer = $('#grid-container'),
+	var gridContainer = $('#grid-container, .grid-container'),
 		filtersContainer = $('#filters-container'),
 		gridBlog = $('#grid-blog'),
 		filtersBlog = $('#filters-blog'),

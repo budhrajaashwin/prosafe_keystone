@@ -8,36 +8,24 @@
 
 <div class="container padding-bottom padding-top">
   <div class="row">
-
-    <!-- CUBE PORTFOLIO -->
-
-    <!-- Portfolio Filter -->
-    <div id="grid-container" data-lightbox="yes" class="cbp-l-grid-masonry cbp-caption-overlayBottom">
-      <ul>
-        <!-- Portfolio Item (image and description) -->
-        {{#each galleries}}
-        	<li class="cbp-item cbp-l-grid-masonry-height2">
-	          <a class="cbp-caption cbp-lightbox" data-title="{{name}}" href="{{image.url}}">
-	            <div class="cbp-caption-defaultWrap">
-	              <img src="{{image.url}}" alt="">
-	            </div>
-
-	            <div class="cbp-caption-activeWrap">
-	              <div class="cbp-l-caption-alignCenter">
-	                <div class="cbp-l-caption-body">
-	                  <div class="cbp-l-caption-title">{{name}}</div>
-	                </div>
-	              </div>
-	            </div>
-	          </a>
-	        </li>
-
-				{{/each}}
-      </ul>
-    </div>
-
-    <!-- CUBE PORTFOLIO -->
-
-
+    <!-- Portfolio Item (image and description) -->
+    {{#each galleries}}
+      <h3 style="margin-top: 0px; margin-bottom: 0px;" class="text-center">{{name}}</h3>
+      <hr>
+      <div data-lightbox="yes" class="grid-container cbp-l-grid-masonry cbp-caption-overlayBottom">
+        <ul>
+          {{#each images}}
+          	<li style="border: 1px solid #eee;line-height: 195px;" class=" cbp-item cbp-l-grid-masonry-height2">
+  	          <a class="cbp-caption cbp-lightbox" href="{{url}}">
+  	            <div class="cbp-caption-defaultWrap">
+  	              <img src="{{url}}" alt="">
+  	            </div>
+  	          </a>
+  	        </li>
+          {{/each}}
+        </ul>
+      </div>
+		{{/each}}
+  <!-- CUBE PORTFOLIO -->
   </div><!-- /row -->
 </div><!-- /container -->
