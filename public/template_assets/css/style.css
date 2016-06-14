@@ -44,10 +44,11 @@ Table of Contents:
 }
 
 .guideline-title > span {
-	max-width: 150px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 .guideline-title i {
