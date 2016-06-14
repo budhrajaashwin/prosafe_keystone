@@ -9,15 +9,19 @@
 <div class="container padding-bottom padding-top">
   <div class="row">
 
-    {{#each data.guidelines}}
-      <a title="Download Guideline" href="/file?path={{uc guideline.path}}/{{guideline.filename}}">
-        <div class="guideline-title">
-          <span>{{title}}</span>
+    <ul class="list-unstyled" style="padding-left: 15px;">
+      {{#each data.guidelines}}
+        <li style="margin-top: 10px;">
+          <a title="Download Guideline" href="/file?path={{uc guideline.path}}/{{guideline.filename}}">
+            <div class="guideline-title">
+              <span>{{title}}</span>
 
-          <i class="fa fa-download"></i>
-        </div>
-      </a>
-    {{/each}}
+              <i class="fa fa-download"></i>
+            </div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
 
   </div><!-- /row -->
 </div><!-- /container -->
