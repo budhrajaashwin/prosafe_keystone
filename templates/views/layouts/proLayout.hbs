@@ -21,6 +21,7 @@
 
   <!-- Css Global Compulsory -->
   <link rel="stylesheet" href="/template_assets/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/template_assets/css/bootstrap-accessibility.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- Css Implementing Plugins -->
   <!-- <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">                           -->
@@ -65,10 +66,10 @@
         <a class="navbar-brand" href="/"><img style="height: 71px; position: relative; top: -28px;" src="/template_assets/img/logo2.jpg"> </a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav" >
+      <div class="collapse navbar-collapse" role="navigation" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" role="menu">
           {{# each navLinks}}
-            <li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+            <li role="menuitem" {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
               <a href="{{ href }}">{{ label }}</a>
             </li>
           {{/each}}
@@ -97,17 +98,17 @@
                         <!-- <input name="name" type="text" id="name" size="30" value="" placeholder="Name"/>
                         <br /> -->
                         <!-- Email -->
-                        <input name="email" type="text" id="email" size="30" value="" placeholder="Email" required/>
+                        <input name="email" aria-label="Email"type="text" id="email" size="30" value="" placeholder="Email" aria-required="true" required/>
                         <br />
                         <!-- Password -->
-                        <input name="password" type="password" id="password" size="30" value="" placeholder="Password" required/>
+                        <input name="password" aria-label="Password" aria-label="Close" type="password" id="password" size="30" value="" placeholder="Password" aria-required="true" required/>
                         <input name="action" type="hidden" value="login"/>
 
                         <!-- Message -->
                         <!-- <textarea name="comments" cols="40" rows="5" id="comments" placeholder="Message"></textarea> -->
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn black-btn blog-btn submit" style="margin-bottom: 0px !important;" id="submit" value="Submit">Sign in</button>
+                        <button aria-label="Sign In" type="submit" class="btn black-btn blog-btn submit" style="margin-bottom: 0px !important;" id="submit" value="Submit">Sign in</button>
                         <div style="text-align: left; margin-bottom: 10px;margin-top: 6px;">
                           <a href="javascript:;" id="forgotPassword">Forgot Password?</a>
                         </div>
@@ -123,18 +124,18 @@
                     <fieldset>
                       <div class="col-md-12">
                         <!-- Name -->
-                        <input name="name" type="text" id="name" size="30" value="" placeholder="Name" class="removeInput" required/>
+                        <input name="name" aria-label="Name" type="text" id="name" size="30" value="" placeholder="Name" class="removeInput" aria-required="true" required/>
                         <br />
                         <!-- Email -->
-                        <input name="email" autocomplete="off" type="email" id="email" size="30" value="" class="removeInput" placeholder="Email" required/>
+                        <input name="email" aria-label="Email" autocomplete="off" type="email" id="email" size="30" value="" class="removeInput" aria-required="true" placeholder="Email" required/>
                         <br />
 
-                        <input name="phone" autocomplete="off" type="tel" id="phone" size="30" value="" class="removeInput" placeHolder="Phone (with country code), example: +919999900000" required/>
+                        <input name="phone" aria-label="Phone" autocomplete="off" type="tel" id="phone" size="30" value="" class="removeInput" aria-required="true" placeHolder="Phone (with country code), example: +919999900000" required/>
                         <br />
                         <!-- Password -->
-                        <input name="password" type="password" id="password" size="30" value="" class="removeInput" placeholder="Password" required/>
+                        <input name="password" aria-label="Password" type="password" id="password" size="30" value="" class="removeInput" aria-required="true" placeholder="Password" required/>
 
-                        <input name="otp" type="tel" id="otp" size="30" maxlength="4" placeHolder="OTP" class="hide"/>
+                        <input name="otp" aria-label="Close" type="tel" id="otp" size="30" maxlength="4" placeHolder="OTP" class="hide"/>
                         <br />
 
                         <input name="action" type="hidden" value="register"/>
@@ -143,7 +144,7 @@
                           Please enter the OTP we've sent to your phone, <a href="javascript:;" id="resendOtp">Resend OTP</a>
                         </div>
                         <!-- Submit Button -->
-                        <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Register</button>
+                        <button type="submit" aria-label="Register" class="btn black-btn blog-btn submit" id="submit" value="Submit">Register</button>
 
                       </div>
                       <div style="float:right">
@@ -318,5 +319,6 @@ if (errorMessage !== '[object Object]') {
 <script src="/template_assets/plugins/jquery.mmenu.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="/template_assets/js/app.min.js"></script>
+<script src="/js/bootstrap/bootstrap-accessibility.min.js"></script>
 </body>
 </html>
