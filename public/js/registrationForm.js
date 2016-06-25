@@ -15,10 +15,36 @@ $("#signin").click(function(){
 
 $('#registrationForm').submit(function (e) {
   e.preventDefault();
-  var registerAction = $.post('register', $('#registrationForm').serialize());
+  if (!$('#otp').hasClass('hide')) {
+    var otpVerify = $.post('verify/otp', $('#registrationForm').serialize());
+    otpVerify.done(function (data) {
+      // $('input[type="text"]').val('');
+      // $('#otp').removeClass('hide');
+      location.reload(true);
+      //alert("You've been registered with us");
+    });
+  } else {
+    var registerAction = $.post('register', $('#registrationForm').serialize());
+    registerAction.done(function (data) {
+      // $('input[type="text"]').val('');
+      $('#showOtpMsg').removeClass('hide');
+      $('.removeInput').addClass('hide');
+      $('#otp').removeClass('hide');
+      //alert("You've been registered with us");
+    });
+
+    registerAction.fail(function (data) {
+      alert(data.responseJSON.error);
+      $("#loginForm").removeClass("hide");
+      $("#registrationForm").addClass("hide");
+    });
+  }
+});
+
+$('#resendOtp').click(function () {
+  var registerAction = $.post('resend/otp', $('#registrationForm').serialize());
   registerAction.done(function (data) {
-    $('input[type="text"]').val('');
-    alert("You've been registered with us, please verify your email to complete the process");
+    alert("OTP has been resent");
   });
 });
 

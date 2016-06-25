@@ -123,21 +123,24 @@
                     <fieldset>
                       <div class="col-md-12">
                         <!-- Name -->
-                        <input name="name" type="text" id="name" size="30" value="" placeholder="Name" required/>
+                        <input name="name" type="text" id="name" size="30" value="" placeholder="Name" class="removeInput" required/>
                         <br />
                         <!-- Email -->
-                        <input name="email" type="email" id="email" size="30" value="" placeholder="Email" required/>
+                        <input name="email" autocomplete="off" type="email" id="email" size="30" value="" class="removeInput" placeholder="Email" required/>
                         <br />
 
-                        <input name="phone" type="tel" id="phone" size="30" value="" placeHolder="Phone" required/>
+                        <input name="phone" autocomplete="off" type="tel" id="phone" size="30" value="" class="removeInput" placeHolder="Phone, please enter along with the country code, example: +919999900000" required/>
                         <br />
                         <!-- Password -->
-                        <input name="password" type="password" id="password" size="30" value="" placeholder="Password" required/>
+                        <input name="password" type="password" id="password" size="30" value="" class="removeInput" placeholder="Password" required/>
+
+                        <input name="otp" type="tel" id="otp" size="30" maxlength="4" placeHolder="OTP" class="hide"/>
+                        <br />
 
                         <input name="action" type="hidden" value="register"/>
 
-                        <div class="alert alert-danger text-left" role="alert">
-                          Please verify your email after registering, to sign in
+                        <div class="alert alert-danger text-left hide" role="alert" id="showOtpMsg">
+                          Please enter the OTP we've sent to your phone, <a href="javascript:;" id="resendOtp">Resend OTP</a>
                         </div>
                         <!-- Submit Button -->
                         <button type="submit" class="btn black-btn blog-btn submit" id="submit" value="Submit">Register</button>

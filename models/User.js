@@ -1,5 +1,9 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
+var request = require('request'),
+		baseUrl = "http://alerts.sinfini.com/api/web2sms.php?",
+		sinfiniKey = "Abf925bf0d4aeb83d4f64e81a90c5aaf1",
+		sender = "PROSAF";
 
 /**
 * User Model
@@ -14,6 +18,7 @@ User.add({
 	phone: {type: Types.Text, required: true, initial: false},
 	password: { type: Types.Password, initial: true, required: true },
 	verificationHash: {type: Types.Text, initial: false},
+	otp: {type: Types.Text },
 	resetHash: {type: Types.Text, initial: false},
 	verified: {type: Types.Boolean, initial: false, default: false},
 	createdAt: { type: Date, default: Date.now },
@@ -40,6 +45,26 @@ User.relationship({ ref: 'Post', path: 'posts', refPath: 'author' });
 
 User.defaultColumns = 'name, email, isAdmin';
 
+function generateCode(){
+	return Math.floor(1000 + Math.random() * 9000)
+};
+
+function send_sms(smsObj) {
+	var url = baseUrl + "workingkey=" + sinfiniKey
+	+ "&to=" + smsObj.to
+	+ "&sender=" + sender
+	+ "&message=" + smsObj.body;
+	request.get({
+		url: url
+	}, function (error, response, body) {
+		if (error) {
+			console.error("[SmsService.send_sms] error", error);
+			return;
+		} else {
+			console.log("[SmsService.send_sms]", body);
+		}
+	});
+};
 
 User.schema.pre('save',function (next) {
 	this.wasNew = this.isNew;
@@ -51,6 +76,7 @@ User.schema.pre('save',function (next) {
 			text += possible.charAt(Math.floor(Math.random() * possible.length));
 		}
 		this.verificationHash = text;
+		this.otp = generateCode();
 	}
 	next();
 });
@@ -58,21 +84,25 @@ User.schema.pre('save',function (next) {
 User.schema.post('save', function(user){
 
 	if(this.wasNew){
-		console.log("Email",this.email);
-		new keystone.Email({
-			templateName:'verifyUser'
-		}).send({
-			to:user.email,
-			tags: 'Verification',
-			from: {
-				name: 'Prosafe Living',
-				email: 'prosafe.living@gmail.com'
-			},
-			subject: 'Please verify your account',
-			user: user,
-		},function (response){
-			console.log("UserEmail response", response);
+		send_sms({
+			to: this.phone,
+			body: "OTP:" + this.otp + " Please verify your phone number using this OTP"
 		});
+		// console.log("Email",this.email);
+		// new keystone.Email({
+		// 	templateName:'verifyUser'
+		// }).send({
+		// 	to:user.email,
+		// 	tags: 'Verification',
+		// 	from: {
+		// 		name: 'Prosafe Living',
+		// 		email: 'prosafe.living@gmail.com'
+		// 	},
+		// 	subject: 'Please verify your account',
+		// 	user: user,
+		// },function (response){
+		// 	console.log("UserEmail response", response);
+		// });
 	}
 });
 

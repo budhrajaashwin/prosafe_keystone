@@ -52,6 +52,8 @@ exports = module.exports = function(app) {
 	//Login route
 	app.post('/register', routes.views.users);
 	app.post('/forgot', routes.views.forgotPassword);
+	app.post('/verify/otp', routes.views.verifyOtp);
+	app.post('/resend/otp', routes.views.resendOtp);
 	app.post('/reset/:resetHash', routes.views.changePassword);
 	app.post('/login', routes.views.users);
 	app.post('/signin', routes.views.users);
