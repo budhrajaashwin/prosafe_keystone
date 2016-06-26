@@ -148,9 +148,9 @@
 
 		$('#owl-demo').owlCarousel({
 		  autoPlay: 3000, //Set AutoPlay to 3 seconds
-		  items : 5,
-      itemsTablet: [768,5],
-      itemsDesktopSmall: [979,5],
+		  items : 6,
+      itemsTablet: [768,6],
+      itemsDesktopSmall: [979,6],
       itemsMobile: [479, 4],
       afterUpdate: function () {
         updateSize();
