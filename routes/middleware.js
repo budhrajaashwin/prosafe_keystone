@@ -39,6 +39,11 @@ exports.initLocals = function(req, res, next) {
 
 };
 
+exports.sameOrigin = function (req, res, next) {
+	res.setHeader('X-Frame-Options', 'ALLOWALL');
+	next();
+};
+
 
 /**
 Fetches and clears the flashMessages before a view is rendered
@@ -54,6 +59,7 @@ exports.flashMessages = function(req, res, next) {
 	};
 
 	res.locals.messages = _.any(flashMessages, function(msgs) { return msgs.length; }) ? flashMessages : false;
+	res.setHeader('X-Frame-Options', 'ALLOWALL');
 
 	next();
 
