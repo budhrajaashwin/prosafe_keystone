@@ -7,7 +7,7 @@ exports = module.exports = function(req, res) {
 
   view.on('init', function(next) {
     keystone.list('User').model.findOne({ email: req.body.email }).exec(function(err, user) {
-      if (err) {
+      if (err || !user) {
         return res.json(500, {status: 0});
       }
       console.log('user', user);
