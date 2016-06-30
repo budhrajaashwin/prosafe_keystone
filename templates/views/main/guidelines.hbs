@@ -6,21 +6,24 @@
 </div>
 <!-- End Header Background Parallax Image -->
 
-<div class="container padding-bottom padding-top">
+<div style="min-height: 329px;" class="container padding-bottom padding-top">
   <div class="row">
-
-    <ul class="list-unstyled" style="padding-left: 15px;">
-      {{#each data.guidelines}}
-        <li style="margin-top: 10px;">
-          <a title="Download" href="/file?path={{uc guideline.path}}/{{guideline.filename}}">
-            <div class="guideline-title">
-              <i class="fa fa-download"></i>
-              <span>{{title}}</span>
-            </div>
-          </a>
-        </li>
-      {{/each}}
-    </ul>
+    {{#if user}}
+      <ul class="list-unstyled" style="padding-left: 15px;">
+        {{#each data.guidelines}}
+          <li style="margin-top: 10px;">
+            <a title="Download" href="/file?path={{uc guideline.path}}/{{guideline.filename}}">
+              <div class="guideline-title">
+                <i class="fa fa-download"></i>
+                <span>{{title}}</span>
+              </div>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>Please login to see product's technical details and guidelines. </p>
+    {{/if}}
 
   </div><!-- /row -->
 </div><!-- /container -->
