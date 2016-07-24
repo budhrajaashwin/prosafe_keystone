@@ -1,7 +1,7 @@
 var keystone = require('keystone');
 var request = require('request'),
 		baseUrl = "http://alerts.sinfini.com/api/web2sms.php?",
-		sinfiniKey = "Abf925bf0d4aeb83d4f64e81a90c5aaf1",
+		sinfiniKey = "A2a621be249ba1d91421bf1dc04bb275f",
 		sender = "PROSAF",
 exports = module.exports = function(req, res) {
 

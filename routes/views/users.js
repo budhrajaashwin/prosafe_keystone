@@ -2,7 +2,7 @@ var keystone = require('keystone'),
 User = keystone.list('User');
 var request = require('request'),
 baseUrl = "http://alerts.sinfini.com/api/web2sms.php?",
-sinfiniKey = "Abf925bf0d4aeb83d4f64e81a90c5aaf1",
+sinfiniKey = "A2a621be249ba1d91421bf1dc04bb275f",
 sender = "PROSAF";
 
 exports = module.exports = function(req, res) {
@@ -14,6 +14,7 @@ exports = module.exports = function(req, res) {
     + "&to=" + smsObj.to
     + "&sender=" + sender
     + "&message=" + smsObj.body;
+    console.log(url);
     request.get({
       url: url
     }, function (error, response, body) {
