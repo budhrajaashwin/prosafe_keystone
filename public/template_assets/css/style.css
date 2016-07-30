@@ -658,7 +658,13 @@ a:focus {
 	background-size: cover;
 }
 #projects_bg{
-	background: url('../img/header_bg/products.jpg') 50% 0 no-repeat fixed;
+	background: url('../img/header_bg/products.jpg') 50% -150px no-repeat fixed;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	background-size: cover;
+}
+#gallery_bg{
+	background: url('../img/header_bg/gallery.jpg') 50% -200px no-repeat fixed;
 	padding-top: 200px;
 	padding-bottom: 200px;
 	background-size: cover;
@@ -670,9 +676,16 @@ a:focus {
 	padding-bottom: 200px;
 	background-size: cover;
 }
+#guidelines_bg {
+	color: #fff;
+	background: url('../img/header_bg/guidelines.png') 50% -200px no-repeat fixed;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	background-size: cover;
+}
 #contact_bg{
 	color: #fff;
-	background: url('../img/header_bg/hands.jpg') 50% 0 no-repeat fixed;
+	background: url('../img/header_bg/contact.png') 50% 0 no-repeat fixed;
 	padding-top: 200px;
 	padding-bottom: 200px;
 	background-size: cover;
